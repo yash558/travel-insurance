@@ -147,18 +147,7 @@ const InsuredDetails = () => {
                 </div>
               )}
 
-              {item.title === "Age" && (
-                <div
-                  onClick={() => onClickHandler({ item })}
-                  style={{ boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.2)" }}
-                  className={`font-[600] ${
-                    item.title !== "Age" ? "" : "cursor-pointer"
-                  } bg-white w-[250px] mobile:w-full whitespace-nowrap rounded-[4px] py-2 px-4`}
-                >
-                  {item.title}:{" "}
-                  <span className="text-primary">{item.value}</span>
-                </div>
-              )}
+           
 
               {item.title !== "Pin Code" && item.title !== "Age" && (
                 <div

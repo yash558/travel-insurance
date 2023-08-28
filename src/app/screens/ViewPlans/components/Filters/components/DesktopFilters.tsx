@@ -13,7 +13,7 @@ const DesktopFilters = ({ filters }: { filters: any }) => {
       <DesktopAllFilters filters={filters} />
 
       <Container>
-        <div className="flex flex-wrap justify-between w-full gap-2 py-7 text-[#2E2E2EA6]">
+        <div className="flex flex-wrap justify-between w-full py-7 text-[#2E2E2EA6]">
           {filters?.map((item: any, i: number) => {
             if (item.type === "popup") {
               return (
@@ -32,10 +32,10 @@ const DesktopFilters = ({ filters }: { filters: any }) => {
                         },
                       }));
                     }}
-                    className="border-[2px] w-[200px] gap-20 flex items-center justify-between border-secondary rounded-[4px] py-2 px-4"
+                    className="border-[2px] w-full flex items-center justify-between border-secondary rounded-[40px] py-2 px-4"
                   >
                     {item.title}
-                    <IoIosArrowDown />
+                    <IoIosArrowDown className="mx-2" />
                   </button>
                 </div>
               );
@@ -54,7 +54,7 @@ const DesktopFilters = ({ filters }: { filters: any }) => {
                           },
                         }))
                       }
-                      className="border-[2px] w-[200px] flex items-center gap-3 border-secondary rounded-[4px] py-2 px-4"
+                      className="border-[2px] w-[200px] flex items-center gap-3 border-secondary rounded-[40px] py-2 px-4"
                     >
                       <TbFilter />
                       {item.title}
@@ -64,7 +64,7 @@ const DesktopFilters = ({ filters }: { filters: any }) => {
               } else {
                 return (
                   <div key={i}>
-                    <button className="border-[2px] w-full flex items-center gap-3 border-secondary rounded-[4px] py-2 px-4">
+                    <button className="border-[2px] w-full flex items-center gap-3 border-secondary rounded-[40px] py-2 px-4">
                       {item.title}
                     </button>
                   </div>

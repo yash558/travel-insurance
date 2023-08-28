@@ -9,7 +9,7 @@ const ComparePlans = () => {
       <Container>
         <Plans />
 
-        {compariableData?.map((item3, k) => (
+        {compariableData?.map((item3: any, k: any) => (
           <div key={k}>
             <div className="bg-quaternary my-[25px] h-[1px] w-full opacity-25" />
             <div>

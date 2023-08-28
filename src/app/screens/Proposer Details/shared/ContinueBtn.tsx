@@ -19,7 +19,7 @@ const ContinueBtn = () => {
         onClick={() => continueClickHandler()}
         className="bg-primary w-full mt-10 font-[700] text-white py-3 rounded-[10px]"
       >
-        Proceed to Medical Questions
+        Continue
       </button>
     </div>
   );

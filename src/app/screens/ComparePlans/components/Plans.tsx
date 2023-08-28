@@ -13,16 +13,12 @@ const Plans = () => {
   return (
     <div>
       <div className="mt-10">
-        <div className="flex items-center gap-5">
-          <div className="cursor-pointer" onClick={() => router.back()}>
-            <AiOutlineArrowLeft size={20} />
-          </div>
-          <h1 className="text-3xl text-secondary font-[800]">Compare Plans</h1>
-        </div>
-        <div className="mt-10 flex mobile:flex-wrap items-center gap-20">
-          <div>
-            <h3 className="text-secondary font-[600]">Comparison summary</h3>
-            <p className="text-quaternary text-xs">4 key differences</p>
+       
+        <div className="mt-10 flex flex-col mobile:flex-wrap items-center gap-20">
+          <div className="flex items-center justify-center flex-col">
+            <p className="text-[#0A225F] text-lg">Who would you like to insure?</p>
+            <div></div>
+            <h3 className="text-secondary font-[600] text-4xl">Find top travel insurance plans</h3>
           </div>
           <div className="flex flex-wrap mobile:justify-center gap-2 mobile:gap-5">
             {products?.map((item, i) => (

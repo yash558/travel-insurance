@@ -1,25 +1,71 @@
+"use client";
+import Summary from "@/app/screens/Proposer Details/components/Summary";
+import { proposerDataone } from "@/app/screens/Proposer Details/data/data";
 import React, { useState } from "react";
-import Indicators from "../../shared/Indicators";
-import { proposerData } from "../../data/data";
-import ContinueBtn from "../../shared/ContinueBtn";
-import Summary from "../Summary";
 
 const Step1 = () => {
   const [activeTab, setActiveTab] = useState<any>(0);
+  const data = [
+    {
+      title: "Medical Expenses",
+      expense: "$100,000",
+      deductible: "$100",
+    },
+    {
+      title: "Baggage Loss",
+      expense: "$500",
+      deductible: "No Deductible",
+    },
+    {
+      title: "Loss of Passport",
+      expense: "$300",
+      deductible: "No Deductible",
+    },
+    {
+      title: "Trip Cancellation",
+      expense: "$1,500",
+      deductible: "No Deductible",
+    },
+    {
+      title: "Personal Accident",
+      expense: "$12,000",
+      deductible: "No Deductible",
+    },
+  ];
 
+  interface MedicalExpensesCardProps {
+    totalExpenses: string;
+    deductible: string;
+    title: string;
+  }
+
+  const MedicalExpensesCard: React.FC<MedicalExpensesCardProps> = ({
+    title,
+    totalExpenses,
+    deductible,
+  }) => {
+    return (
+      <div className="bg-white shadow-lg rounded-lg p-6">
+        <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+        <div className="mb-4">
+          <span className="font-semibold"></span> {totalExpenses}
+        </div>
+        <div>
+          <span className="font-semibold">Deductible:</span> {deductible}
+        </div>
+      </div>
+    );
+  };
   return (
     <div>
-      <div className="py-5">
-        <Indicators step={1} />
-      </div>
       <div>
         <div className="flex mobile:hidden gap-10 mobile:flex-wrap justify-between">
-          <div className="flex flex-col justify-center mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
-            {proposerData?.tabs?.map((item, i) => (
+          <div className="flex flex-col justify-center h-[500px] mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
+            {proposerDataone?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
                 key={i}
-                className={`flex cursor-pointer w-[200px] ${
+                className={`flex cursor-pointer w-[300px] ${
                   activeTab === i
                     ? "bg-white text-secondary rounded-[35px] mobile:rounded-[35px] rounded-s-none"
                     : "bg-secondary text-white"
@@ -33,25 +79,14 @@ const Step1 = () => {
           </div>
           <div className="mobile:mt-5 mt-10">
             <div>
-              <h1 className="text-3xl text-secondary font-[600]">
-                {proposerData.tabs[activeTab]?.heading}
+              <h1 className="text-3xl text-secondary my-4 font-[600]">
+                {proposerDataone.tabs[activeTab]?.heading}
               </h1>
-              <p className="text-quaternary w-[70%] my-4">
-                {proposerData.tabs[activeTab]?.desc}
-              </p>
-              {activeTab === 1 && (
-                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
-                  {proposerData.tabs[activeTab]?.btns?.map((item, i) => (
-                    <button
-                      className="w-[146.5px] mobile:w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
-                      key={i}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>
-              )}
-              <div className="grid mobile:flex mobile:flex-wrap  grid-cols-2 grid-rows-2 gap-2 mobile:gap-5 mt-5">
+              {/* <p className="text-quaternary w-[70%] my-4">
+                {proposerDataone.tabs[activeTab]?.desc}
+              </p> */}
+           
+              {/* <div className="grid mobile:flex mobile:flex-wrap  grid-cols-2 grid-rows-2 gap-2 mobile:gap-5 mt-5">
                 {proposerData?.tabs[activeTab]?.fields?.map((item, i) => (
                   <div key={i} className="mobile:w-full">
                     {item !== "Dropdown" && item !== "Input File" && (
@@ -92,16 +127,41 @@ const Step1 = () => {
                     </span>
                   </div>
                 ))}
+              </div> */}
+              {
+                activeTab === 0 &&
+              <div className=" flex gap-10 mr-8 flex-wrap items-center justify-start">
+                {data.map((item, index) => (
+                  <MedicalExpensesCard
+                    key={index} // Add a unique key when rendering in a list
+                    title={item.title}
+                    totalExpenses={item.expense}
+                    deductible={item.deductible}
+                  />
+                ))}
               </div>
+              }
+                 {activeTab === 1 && (
+                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+                  {proposerDataone.tabs[activeTab]?.btns?.map((item, i) => (
+                    <button
+                      className="w-[146.5px] mobile:w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
+                      key={i}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
-          <div className="mobile:hidden">
-            <Summary />
+            <div className="flex items-end justify-end mr-10">
+              <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md ">Proceed to buy</button>
+            </div>
           </div>
         </div>
 
         <div className="flex desktop:hidden flex-col gap-5">
-          {proposerData?.tabs?.map((item, i) => (
+          {proposerDataone?.tabs?.map((item, i) => (
             <div key={i}>
               <div
                 onClick={() => setActiveTab(activeTab === i ? null : i)}
@@ -118,23 +178,25 @@ const Step1 = () => {
                   <div className="mobile:mt-5 mt-10">
                     <div>
                       <h1 className="text-xl text-secondary font-[600]">
-                        {proposerData.tabs[activeTab]?.heading}
+                        {proposerDataone.tabs[activeTab]?.heading}
                       </h1>
                       <p className="text-quaternary">
-                        {proposerData.tabs[activeTab]?.desc}
+                        {proposerDataone.tabs[activeTab]?.desc}
                       </p>
                       <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
-                        {proposerData.tabs[activeTab]?.btns?.map((item, i) => (
-                          <button
-                            className="w-[146.5px] mobile:w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
-                            key={i}
-                          >
-                            {item}
-                          </button>
-                        ))}
+                        {proposerDataone.tabs[activeTab]?.btns?.map(
+                          (item, i) => (
+                            <button
+                              className="w-[146.5px] mobile:w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
+                              key={i}
+                            >
+                              {item}
+                            </button>
+                          )
+                        )}
                       </div>
                       <div className="grid mobile:flex mobile:flex-wrap  grid-cols-2 grid-rows-2 gap-2 mobile:gap-5 mt-5">
-                        {proposerData?.tabs[activeTab]?.fields?.map(
+                        {proposerDataone?.tabs[activeTab]?.fields?.map(
                           (item, i) => (
                             <div key={i} className="mobile:w-full">
                               {item !== "Dropdown" && item !== "Input File" && (
@@ -184,12 +246,9 @@ const Step1 = () => {
             </div>
           ))}
 
-          <div className="mobile:hidden">
-            {/* <Summary /> */}
-          </div>
+          <div className="mobile:hidden">{/* <Summary /> */}</div>
         </div>
       </div>
-      <ContinueBtn />
     </div>
   );
 };

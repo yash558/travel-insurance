@@ -228,7 +228,7 @@ const Products = () => {
                 }
               />
             </div>
-            <div className="flex gap-10 w-full justify-between">
+            <div className="flex flex-col gap-10 w-full justify-between">
               <div className="flex flex-col gap-10">
                 <h3 className="text-xl font-[700]">{activeTab}</h3>
                 <div>
@@ -436,7 +436,7 @@ const Products = () => {
 
       <Container>
         <div className="flex flex-col gap-10">
-          <span className="flex justify-end">
+          {/* <span className="flex justify-end">
             <span
               onClick={() =>
                 setHomeStates((prevStates: any) => ({
@@ -456,10 +456,10 @@ const Products = () => {
               <BiSort />
               <span>Sort by</span>
             </span>
-          </span>
+          </span> */}
           {products?.map((item: any, i: number) => (
-            <div key={i}>
-              <div className="flex justify-between flex-wrap gap-10">
+            <div key={i} className="grid grid-cols-3">
+              <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-md shadow-md">
                 <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                   <Image
                     className="object-contain"
@@ -498,12 +498,10 @@ const Products = () => {
                     <h1 className="text-secondary text-2xl font-[600]">
                       {item.name}
                     </h1>
-                    <span className="text-tertiary font-[600] text-sm">
-                      {item.discount}% Direct Discount
-                    </span>
+                  
                   </div>
                   <div className="text-quaternary">
-                    <div className="flex gap-2 items-center mt-5">
+                    <div className="flex gap-2 items-center mt-2">
                       <input
                         className="mobile:hidden"
                         onChange={(e) => {
@@ -579,7 +577,7 @@ const Products = () => {
                 </div>
               </div>
 
-              <div className="mobile:grid flex-wrap text-quaternary justify-between mobile:grid-cols-2 mobile:grid-rows-2 flex gap-3 mt-10">
+              {/* <div className="mobile:grid flex-wrap text-quaternary justify-between mobile:grid-cols-2 mobile:grid-rows-2 flex gap-3 mt-10">
                 {item.cover?.map((item2: any, j: number) => (
                   <div key={j}>
                     <div className="flex min-w-[250px] mobile:min-w-full mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 mobile:py-3 border-quaternary">
@@ -604,9 +602,9 @@ const Products = () => {
                   <TbFilter />
                   <span>All Covers</span>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="w-full my-10 bg-quaternary h-[1px] bg-opacity-[45%]" />
+              {/* <div className="w-full my-10 bg-quaternary h-[1px] bg-opacity-[45%]" /> */}
             </div>
           ))}
         </div>

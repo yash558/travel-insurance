@@ -33,7 +33,7 @@ const FAQ = () => {
             src="/assets/faq.png"
             height={700}
             width={700}
-            className="w-[400px] h-[400px] object-cover"
+            className="w-[600px] h-[600px] object-cover"
             alt="FAQ"
           />
         </div>
@@ -46,22 +46,22 @@ const FAQ = () => {
               {faqs?.map((item, i) => (
                 <div
                   key={i}
-                  className="border-2 border-quaternary w-[600px] mobile:w-full justify-between flex items-center px-3 py-2"
+                  className="border-2 border-quaternary w-[1000px] mobile:w-full justify-between flex items-center"
                 >
                   {!toggleFaq && (
                     <div>
-                      <span className="font-[600]">{item.qns}</span>
+                      <span className="font-[600] py-2 px-4">{item.qns}</span>
                     </div>
                   )}
 
                   {selectedFaq !== i && toggleFaq && (
                     <div>
-                      <span className="font-[600]">{item.qns}</span>
+                      <span className="font-[600] py-2 px-4">{item.qns}</span>
                     </div>
                   )}
                   {toggleFaq && selectedFaq === i ? (
                     <div className="flex justify-between gap-10 items-center">
-                      <span>{item.ans}</span>
+                      <span className="p-4">{item.ans}</span>
                       <span
                         onClick={() => setToggleFaq(false)}
                         className="text-white cursor-pointer text-2xl bg-secondary p-3"
