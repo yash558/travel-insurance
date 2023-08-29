@@ -99,20 +99,25 @@ const InsuranceForm: React.FC = () => {
               <label className="">{question.text}</label>
             </div>
             <div className="flex items-center space-x-4">
-            
-        <button
-          className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onclick=""
-        >
-          Yes
-        </button>
-        <button
-          className="border-2 border-[#0A225F] text-[#0A225F] font-bold py-2 px-4 rounded"
-          onclick=""
-        >
-          No
-        </button>
-      
+
+              <button
+                className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  // Handle "Yes" button click here
+                }}
+              >
+                Yes
+              </button>
+              <button
+                className="border-2 border-[#0A225F] text-[#0A225F] font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  // Handle "No" button click here
+                }}
+              >
+                No
+              </button>
+
+
             </div>
           </div>
         ))}
