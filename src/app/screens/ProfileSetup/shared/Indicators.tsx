@@ -18,13 +18,13 @@ const Indicators = ({ step }: { step: number }) => {
         {steps.map((item, i) => (
           <div key={i}>
             <div>
-              <span className="text-secondary w-[20%] absolute mt-[-25px] ms-[-8px] mobile:ms-[0] text-sm">
+              <span className="text-secondary w-[20%] absolute mt-[-25px] ms-[-8px] mobile:ms-[0] md:text-sm text-xs">
                 {titles[i]}
               </span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center mt-1">
               <div
-                className={`flex w-[44px] h-[44px] mobile:w-[34px] mobile:h-[34px] mobile:text-[17px] text-black justify-center items-center rounded-full ${
+                className={`flex w-[44px] h-[44px] mobile:w-[34px] mobile:h-[34px] mobile:text-[12px] text-black justify-center items-center rounded-full ${
                   i < step
                     ? "bg-secondary text-white"
                     : "border-[2px] bg-white border-black border-opacity-75 text-black"

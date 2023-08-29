@@ -89,32 +89,30 @@ const InsuranceForm: React.FC = () => {
 
   return (
     <div className="min-h-screen p-8">
-      <h1 className="text-[#0A225F] font-bold text-4xl">Help us know the medical condition, if any</h1>
+      <h1 className="text-[#0A225F] font-bold md:text-4xl text-2xl">Help us know the medical condition, if any</h1>
       <h1 className="text-[#0A225F] text-xl">We’ll only ask for the details insurance companies need</h1>
       <div>
-        {questions.map((question, index) => (
-          <div key={question.id} className="flex justify-between items-center my-8">
-            <div className="w-[60%] flex gap-4">
+        {questions.map((question: any, index: number) => (
+          <div key={question.id} className="flex flex-wrap justify-between items-center my-8">
+            <div className="md:w-[60%] w-[90%] flex gap-4">
               <h1>{index + 1}</h1>
               <label className="">{question.text}</label>
             </div>
-            <div className="flex items-center">
-              <button
-                className={`${
-                  formData[question.id] ? 'bg-[#F5AB01]' : 'bg-[#0A225F]'
-                } px-8 py-2 rounded-l text-white`}
-                onClick={() => handleToggle(question.id)}
-              >
-                Yes
-              </button>
-              <button
-                className={`${
-                  !formData[question.id] ? 'bg-[#F5AB01]' : 'bg-[#0A225F]'
-                } px-8 py-2 rounded-r text-white`}
-                onClick={() => handleToggle(question.id)}
-              >
-                No
-              </button>
+            <div className="flex items-center space-x-4">
+            
+        <button
+          className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onclick=""
+        >
+          Yes
+        </button>
+        <button
+          className="border-2 border-[#0A225F] text-[#0A225F] font-bold py-2 px-4 rounded"
+          onclick=""
+        >
+          No
+        </button>
+      
             </div>
           </div>
         ))}

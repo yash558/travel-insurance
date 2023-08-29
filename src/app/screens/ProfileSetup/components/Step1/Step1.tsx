@@ -76,7 +76,7 @@ const Step1 = ({ data }: { data: any }) => {
       <div className="flex justify-left">
         <div className="">
           <div className="flex items-center justify-center">
-            <div className="flex justify-left mt-5">
+            <div className="flex justify-left flex-row mt-5">
               {/* mobile */}
               {/* <MobileStep1
               data={data}
@@ -105,7 +105,7 @@ const Step1 = ({ data }: { data: any }) => {
                     </span>
                   </h1>
                 </div>
-                <div className="flex gap-5 mobile:grid mobile:grid-cols-2 mb-10 flex-wrap mobile:justify-start mobile:gap-5">
+                <div className="flex gap-5 mobile:grid mobile:grid-cols-2 mb-10 flex-wrap  mobile:justify-start mobile:gap-5">
                   {btns?.map((item, i) => (
                     <div key={i}>
                       {profileSetupStates?.step1States?.selectedBtn === i ? (
@@ -146,7 +146,7 @@ const Step1 = ({ data }: { data: any }) => {
               <div className="">
                 <Image
                   src="/assets/bg.png"
-                  className="w-[700px] -mt-32 rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
+                  className="w-[700px] -mt-32 rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:hidden"
                   width={200}
                   height={200}
                   alt="Logo"

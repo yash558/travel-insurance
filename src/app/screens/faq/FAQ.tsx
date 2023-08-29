@@ -33,7 +33,7 @@ const FAQ = () => {
             src="/assets/faq.png"
             height={700}
             width={700}
-            className="w-[600px] h-[600px] object-cover"
+            className="md:w-[600px] md:h-[600px] object-cover"
             alt="FAQ"
           />
         </div>

@@ -62,7 +62,7 @@ const Step5 = () => {
         <div className="">
           <Image
             src="/assets/bg.png"
-            className="w-[600px] rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
+            className="w-[600px] md:flex hidden rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
             width={200}
             height={200}
             alt="Logo"

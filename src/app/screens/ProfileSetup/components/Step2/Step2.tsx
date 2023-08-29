@@ -77,7 +77,7 @@ const Step2 = () => {
               type="date"
               id="startDate"
               name="startDate"
-              className="w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Enter Your Start Date..."
             />
           </div>
@@ -92,7 +92,7 @@ const Step2 = () => {
               type="date"
               id="endDate"
               name="endDate"
-              className="w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Enter Your End Date..."
             />
           </div>

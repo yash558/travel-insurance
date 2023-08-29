@@ -45,7 +45,7 @@ const Step3 = () => {
         <div className="">
         <label
               htmlFor="ageGroup"
-              className="block text-xl font-medium text-[#0a225f] mb-2"
+              className="block text-xl mt-4 font-medium text-[#0a225f] mb-2"
             >
               Select Number of People:
             </label>
@@ -73,7 +73,7 @@ const Step3 = () => {
             <select
               id="ageGroup"
               name="ageGroup"
-              className="w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               defaultValue="" // Set a default value if needed
             >
               <option value="" disabled>
@@ -95,7 +95,7 @@ const Step3 = () => {
             <input
               type="number"
 
-              className="w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Sum Insured"
             />
           </div>

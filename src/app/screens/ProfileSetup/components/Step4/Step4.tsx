@@ -28,8 +28,8 @@ const BackClickHandler = () => {
         />
       </div>
       <Indicators step={4} />
-      <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">Does the traveller have any pre-existing <br/> medical condition?</h5>
-      <p className="text-[20px] mobile:text-[20px]">If the traveller have a known illness, injury or health condition like heart disease, <br/> diabetes, cancer etc which will help us cover you</p>
+      <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">Does the traveller have any pre-existing <br className="md:flex hidden"/> medical condition?</h5>
+      <p className="text-[20px] mobile:text-[20px]">If the traveller have a known illness, injury or health condition like heart disease, <br className="md:flex hidden"/> diabetes, cancer etc which will help us cover you</p>
       <div className="w-[131px] mt-3 h-[5px] bg-[#36B37E]"></div>
   <div className="flex justify-between">
 
