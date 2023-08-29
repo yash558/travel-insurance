@@ -1,9 +1,22 @@
-"use client";
+"use client"
 import React, { useState } from 'react';
 
-const InsuranceForm = () => {
-    
-  const [formData, setFormData] = useState({
+type FormData = {
+  declinedInsurance: boolean;
+  politicallyExposed: boolean;
+  hospitalized: boolean;
+  adverseFindings: boolean;
+  diabetes: boolean;
+  highBloodPressure: boolean;
+  geneticDisorder: boolean;
+  mentalDisorder: boolean;
+  smoke: boolean;
+  alcohol: boolean;
+  chewTobacco: boolean;
+};
+
+const InsuranceForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     declinedInsurance: false,
     politicallyExposed: false,
     hospitalized: false,
@@ -30,12 +43,12 @@ const InsuranceForm = () => {
     {
       id: 'hospitalized',
       text:
-        'Other than common cold, flu, infections, minor injury or other minor ailments; have you ever been hospitalized for more than 5 days, undergone / advised to undergo any surgical procedures, or taken any medication/ had any symptoms for more than 14 days? Medication is including but not limited to inhalers, injections, oral drugs and topical applications',
+        'Other than common cold, flu, infections, minor injury, or other minor ailments; have you ever been hospitalized for more than 5 days, undergone/advised to undergo any surgical procedures, or taken any medication/had any symptoms for more than 14 days? Medication is including but not limited to inhalers, injections, oral drugs, and topical applications.',
     },
     {
       id: 'adverseFindings',
       text:
-        'Have you ever had adverse findings to any diagnostic tests or investigations such as Thyroid Profile, Lipid Profile, Treadmill test, Angiography, Echocardiography, Endoscopy, Ultrasound, CT Scan, MRI, Biopsy and FNAC?',
+        'Have you ever had adverse findings to any diagnostic tests or investigations such as Thyroid Profile, Lipid Profile, Treadmill test, Angiography, Echocardiography, Endoscopy, Ultrasound, CT Scan, MRI, Biopsy, and FNAC?',
     },
     {
       id: 'diabetes',
@@ -67,7 +80,7 @@ const InsuranceForm = () => {
     },
   ];
 
-  const handleToggle = (field: type) => {
+  const handleToggle = (field: keyof FormData) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: !prevData[field],
@@ -77,13 +90,13 @@ const InsuranceForm = () => {
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-[#0A225F] font-bold text-4xl">Help us know the medical condition, if any</h1>
-      <h1 className="text-[#0A225F] text-xl">We’ll only ask for the details insurance companies needy</h1>
+      <h1 className="text-[#0A225F] text-xl">We’ll only ask for the details insurance companies need</h1>
       <div>
         {questions.map((question, index) => (
           <div key={question.id} className="flex justify-between items-center my-8">
             <div className="w-[60%] flex gap-4">
-    <h1>{index+1}</h1>
-            <label className="">{question.text}</label>
+              <h1>{index + 1}</h1>
+              <label className="">{question.text}</label>
             </div>
             <div className="flex items-center">
               <button
@@ -106,8 +119,8 @@ const InsuranceForm = () => {
           </div>
         ))}
         <div className="flex items-center justify-center ">
-              <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md  w-[50%]">Continue</button>
-            </div>
+          <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md  w-[50%]">Continue</button>
+        </div>
       </div>
     </div>
   );
