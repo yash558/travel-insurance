@@ -502,22 +502,32 @@ export const products = [
 
 export const compariableData = [
   {
-    name: "No Room Rent Limit",
+    name: "Medical Expenses",
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
-    name: "7.5 Lakh No Claim Bonus",
+    name: "Emergency Care",
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
-    name: "No Room Rent Limit",
+    name: "Third party travel cost",
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
-    name: "Unlimited Restoration of cover",
+    name: "Early Return",
+    desc: `Claim Settlement Ratio
+    This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
+  },
+  {
+    name: "Flight Delay",
+    desc: `Claim Settlement Ratio
+    This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
+  },
+  {
+    name: "Legal Assistance",
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
     buyNowBtn: true,

@@ -208,7 +208,7 @@ const ViewPlans = () => {
         <InsuredDetails />
         <Filter />
         {/* <Companies /> */}
-        <Products />
+        {/* <Products /> */}
       </div>
     </div>
   );

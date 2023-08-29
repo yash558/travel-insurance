@@ -2,6 +2,8 @@
 import Summary from "@/app/screens/Proposer Details/components/Summary";
 import { proposerDataone } from "@/app/screens/Proposer Details/data/data";
 import React, { useState } from "react";
+import Faaq from "../screens/Faaq/faaq";
+import FaaqOne from "../screens/Faaq/faaqone";
 
 const Step1 = () => {
   const [activeTab, setActiveTab] = useState<any>(0);
@@ -59,7 +61,7 @@ const Step1 = () => {
   return (
     <div>
       <div>
-        <div className="flex mobile:hidden gap-10 mobile:flex-wrap justify-between">
+        <div className="flex mobile:hidden gap-10 mobile:flex-wrap ">
           <div className="flex flex-col justify-center h-[500px] mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerDataone?.tabs?.map((item, i) => (
               <div
@@ -78,7 +80,7 @@ const Step1 = () => {
             ))}
           </div>
           <div className="mobile:mt-5 mt-10">
-            <div>
+            <div className="">
               <h1 className="text-3xl text-secondary my-4 font-[600]">
                 {proposerDataone.tabs[activeTab]?.heading}
               </h1>
@@ -143,16 +145,20 @@ const Step1 = () => {
               }
                  {activeTab === 1 && (
                 <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
-                  {proposerDataone.tabs[activeTab]?.btns?.map((item, i) => (
-                    <button
-                      className="w-[146.5px] mobile:w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
-                      key={i}
-                    >
-                      {item}
-                    </button>
-                  ))}
+                  <Faaq/>
                 </div>
               )}
+                 {activeTab === 2 && (
+                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+                  <FaaqOne/>
+                </div>
+              )}
+                 {activeTab === 3 && (
+                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+                  <Faaq/>
+                </div>
+              )}
+               
             </div>
             <div className="flex items-end justify-end mr-10">
               <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md ">Proceed to buy</button>

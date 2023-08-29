@@ -74,7 +74,7 @@ export const proposerDataone = {
     },
     {
       tab: "Trip Related Covers",
-      heading: "Personal Details",
+      heading: "Prime – Advantage",
       desc: "Information required about the member to be insured",
       btns: ["Self", "Spouse", "Son", "Daughter"],
       fields: [
@@ -92,7 +92,7 @@ export const proposerDataone = {
     },
     {
       tab: "Address",
-      heading: "Address",
+      heading: "Prime – Advantage",
       desc: "It will be used to send physical copy of your policy.",
       btns: ["Self", "Spouse", "Son", "Daughter"],
       fields: [
@@ -105,7 +105,7 @@ export const proposerDataone = {
     },
     {
       tab: "Contact Details",
-      heading: "Contact Details",
+      heading: "Prime – Advantage",
       desc: "It will be used to send digital copy of your policy.",
       btns: ["Self", "Spouse", "Son", "Daughter"],
       fields: ["Email Address", "Mobile", "Primary Mobile No. "],
