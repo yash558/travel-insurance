@@ -458,7 +458,7 @@ const Products = () => {
             </span>
           </span>
           {products?.map((item: any, i: number) => (
-            <div key={i} className="grid grid-cols-3">
+            <div key={i} className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
               <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                 <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                   <Image
