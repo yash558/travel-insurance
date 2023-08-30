@@ -39,7 +39,7 @@ const Step3 = () => {
       <h5 className="text-[36px] mobile:text-[22px] mt-10 mb-4 text-secondary font-[600]">{`How many people are travelling?`}</h5>
       <div className="w-[131px] mt-3 h-[5px] bg-[#36B37E]"></div>
 
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between gap-8">
         <div className="text-left  flex flex-col gap-8">
         
         <div className="">

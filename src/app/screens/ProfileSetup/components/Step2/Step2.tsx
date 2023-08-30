@@ -64,7 +64,7 @@ const Step2 = () => {
         Don&anpos;t worry you can change your trip dates at a later stage.
       </p>
       <div className="w-[131px] mt-5 h-[5px] bg-[#36B37E]"></div>
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between gap-8">
         <div className="text-left  my-4 flex flex-col gap-8">
           <div>
             <label

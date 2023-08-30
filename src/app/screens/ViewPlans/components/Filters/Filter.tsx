@@ -197,7 +197,7 @@ const Filter = () => {
     <div>
       <DesktopFilters filters={filters} />
       <MobileFilters filters={filters} />
-      <div className="flex flex-wrap justify-center items-center px-8  py-20 gap-10">
+      {/* <div className="flex flex-wrap justify-center items-center px-8  py-20 gap-10">
       {cardData.map((card) => (
         <Card
           key={card.id}
@@ -210,7 +210,7 @@ const Filter = () => {
           onButtonClick={() => handleButtonClick()}
         />
       ))}
-    </div>
+    </div> */}
     </div>
   );
 };

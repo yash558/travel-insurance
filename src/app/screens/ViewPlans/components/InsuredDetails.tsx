@@ -149,7 +149,7 @@ const InsuredDetails = () => {
 
            
 
-              {item.title !== "Pin Code" && item.title !== "Age" && (
+              {item.title !== "Pin Code" && (
                 <div
                   onClick={() => onClickHandler({ item })}
                   style={{ boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.2)" }}

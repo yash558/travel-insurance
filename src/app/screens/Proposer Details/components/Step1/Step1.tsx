@@ -14,7 +14,7 @@ const Step1 = () => {
       </div>
       <div>
         <div className="flex mobile:hidden gap-10 mobile:flex-wrap justify-between">
-          <div className="flex flex-col justify-center mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
+          {/* <div className="flex flex-col justify-center mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerData?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
@@ -30,7 +30,7 @@ const Step1 = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           <div className="mobile:mt-5 mt-10">
             <div>
               <h1 className="text-3xl text-secondary font-[600]">

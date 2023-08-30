@@ -98,7 +98,7 @@ const InsuranceForm: React.FC = () => {
               <h1>{index + 1}</h1>
               <label className="">{question.text}</label>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-center md:mt-0 pt-8 space-x-4">
 
               <button
                 className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

@@ -91,7 +91,7 @@ export const proposerDataone = {
       ],
     },
     {
-      tab: "Address",
+      tab: "Baggage Related Covers",
       heading: "Prime – Advantage",
       desc: "It will be used to send physical copy of your policy.",
       btns: ["Self", "Spouse", "Son", "Daughter"],
@@ -104,7 +104,7 @@ export const proposerDataone = {
       ],
     },
     {
-      tab: "Contact Details",
+      tab: "Medical Related Covers",
       heading: "Prime – Advantage",
       desc: "It will be used to send digital copy of your policy.",
       btns: ["Self", "Spouse", "Son", "Daughter"],

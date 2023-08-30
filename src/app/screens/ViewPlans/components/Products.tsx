@@ -159,7 +159,7 @@ const Products = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="py-20">
       {selectedPlans?.length > 0 && (
         <div className="fixed w-full text-white bottom-0 bg-secondary py-2">
           <div className="flex w-full justify-center gap-5 items-center">
@@ -436,7 +436,7 @@ const Products = () => {
 
       <Container>
         <div className="flex flex-col gap-10">
-          {/* <span className="flex justify-end">
+          <span className="flex justify-end">
             <span
               onClick={() =>
                 setHomeStates((prevStates: any) => ({
@@ -456,10 +456,10 @@ const Products = () => {
               <BiSort />
               <span>Sort by</span>
             </span>
-          </span> */}
+          </span>
           {products?.map((item: any, i: number) => (
             <div key={i} className="grid grid-cols-3">
-              <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-md shadow-md">
+              <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                 <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                   <Image
                     className="object-contain"
