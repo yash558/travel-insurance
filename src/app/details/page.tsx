@@ -59,10 +59,10 @@ const Step1 = () => {
     );
   };
   return (
-    <div>
+    <div className="md:p-0 p-8">
       <div>
         <div className="flex mobile:hidden gap-10 mobile:flex-wrap ">
-          <div className="flex flex-col justify-center h-[500px] mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
+          <div className="flex flex-col justify-center h-[600px] mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerDataone?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
@@ -79,10 +79,10 @@ const Step1 = () => {
               </div>
             ))}
           </div>
-          <div className="mobile:mt-5">
+          <div className="mobile:mt-5 mb-10">
             <div className="">
               <div className="flex items-center justify-center">
-              <Image src="/assets/details.png" className="h-40 w-56 w-full " alt="" height={500} width={500} />
+              <Image src="/assets/details.png" className="h-40 w-56" alt="" height={500} width={500} />
               </div>
               <h1 className="text-3xl text-secondary my-4 font-[600] text-center mb-4">
                 {proposerDataone.tabs[activeTab]?.heading}
@@ -147,12 +147,12 @@ const Step1 = () => {
               </div>
               }
                  {activeTab === 1 && (
-                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+                <div className="flex flex-wrap p-8 mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
                   <Faaq/>
                 </div>
               )}
                  {activeTab === 2 && (
-                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+                <div className="flex flex-wrap p-8 mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
                   <FaaqOne/>
                 </div>
               )}

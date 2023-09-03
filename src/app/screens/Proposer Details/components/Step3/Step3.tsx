@@ -10,6 +10,8 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 const Step3 = () => {
   const [showDeclarationModal, setShowDeclarationModal] = useState(false);
 
+  
+
   return (
     <div>
       {showDeclarationModal && (

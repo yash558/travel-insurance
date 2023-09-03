@@ -55,7 +55,7 @@ const Step2 = () => {
         <h1 className="text-4xl text-secondary font-[600] mt-10">
           {medicalConditionData?.heading}
         </h1>
-        <p className="text-[#253858] text-lg w-[60%] my-4">{medicalConditionData?.desc}</p>
+        <p className="text-[#253858] text-lg md:w-[60%] my-4">{medicalConditionData?.desc}</p>
         <div className="flex items-start justify-start md:mt-0 pt-8 space-x-4">
 
               <button

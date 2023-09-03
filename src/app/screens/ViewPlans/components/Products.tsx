@@ -451,7 +451,7 @@ const Products = () => {
               <span>Sort by</span>
             </span>
           </span>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
             {products?.map((item: any, i: number) => (
               <div key={i} className="">
                 <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
@@ -609,7 +609,7 @@ const Products = () => {
             {products[currentPlanOpenedIndex]?.nestedPlans?.map(
               (item: any, i: number) => (
                 <div key={i} className="gap-10 bg-white rounded-xl shadow-md p-4">
-                  <div className="flex justify-between items-start  flex-col w-96 gap-10  mt-[-13rem]">
+                  <div className="flex justify-between items-start  flex-col md:w-96 gap-10  md:mt-[-13rem]">
                     <div className="flex mobile:mx-auto mobile:hidden flex-col items-start h-full rounded-[16px]">
                       <div className="w-[200px] h-[200px]" />
                     </div>
