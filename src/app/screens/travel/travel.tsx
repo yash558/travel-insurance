@@ -1,6 +1,10 @@
 "use client"
 import React, { useState } from 'react';
 
+
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { IoIosArrowDown } from "react-icons/io";
+
 type FormData = {
   declinedInsurance: boolean;
   politicallyExposed: boolean;
@@ -30,6 +34,11 @@ const InsuranceForm: React.FC = () => {
     chewTobacco: false,
   });
 
+  const [toggleSelected, setToggleSelected] = useState(false);
+  const [toggledIndex, setToggledIndex] = useState<any>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const qualificationData = ["X Pass", "XII Pass", "Graduate", "Post Graduate"];
   const questions = [
     {
       id: 'declinedInsurance',
@@ -121,8 +130,40 @@ const InsuranceForm: React.FC = () => {
             </div>
           </div>
         ))}
-        <div className="flex items-center justify-center ">
-          <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md  w-[50%]">Continue</button>
+        <div className="my-4">
+
+          <div className="mt-10 justify-between flex mobile:flex-col gap-5 my-4">
+            <div className="flex items-center gap-5">
+              <div>
+                <span>12  </span>&nbsp;<span>Qualification</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-5">
+              <div className="relative w-full">
+                <button
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  className="border-[2px] flex justify-end w-[200px] mobile:w-full gap-20 items-center border-secondary rounded-[4px] py-2 px-4"
+                >
+                  <IoIosArrowDown />
+                </button>
+                {showDropdown && (
+                  <div className="absolute border-2 border-secondary border-t-0 rounded-b-md bg-white flex flex-col gap-2 px-4 py-2 w-full">
+                    {qualificationData?.map((item, i) => (
+                      <div key={i} className="flex items-center gap-1">
+                        <input type="checkbox" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+
+          <div className="flex items-center justify-center ">
+            <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md  w-[50%]">Continue</button>
+          </div>
         </div>
       </div>
     </div>

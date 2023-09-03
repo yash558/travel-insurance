@@ -166,7 +166,7 @@ const ViewPlans = () => {
                               )}
                               {homeStates?.filterStates?.currentPopUp?.title ===
                               "Sum Insured" ? (
-                                <span>${item.item}</span>
+                                <span>{item.item}</span>
                               ) : (
                                 <span>{item.item}</span>
                               )}

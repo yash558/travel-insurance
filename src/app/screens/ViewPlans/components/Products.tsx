@@ -140,7 +140,7 @@ const Products = () => {
     type: "popup",
     options: [
       {
-        item: "By relevance",
+        item: "Default",
         relationId: 1,
       },
       {
@@ -148,13 +148,10 @@ const Products = () => {
         relationId: 2,
       },
       {
-        item: "Highest claim settlement ratio",
+        item: "Premium high to low",
         relationId: 3,
       },
-      {
-        item: "Cashless hospitals network",
-        relationId: 4,
-      },
+     
     ],
   };
 
@@ -560,14 +557,14 @@ const Products = () => {
                     <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
                   </div>
                   <div className="mt-10 flex flex-col gap-5">
-                    <Link href="/review-plan">
+                    <Link href="/proposer-details">
                       <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
                         Rs. {item.monthlyPrice} monthly
                       </button>
                     </Link>
 
                     <div>
-                      <Link href={`/product/${item.slug}`}>
+                      <Link href={`/details`}>
                         <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
                           See details
                         </button>
@@ -609,11 +606,11 @@ const Products = () => {
           ))}
         </div>
         {showMorePlans && (
-          <div>
+          <div className="flex flex-wrap">
             {products[currentPlanOpenedIndex]?.nestedPlans?.map(
               (item: any, i: number) => (
                 <div key={i}>
-                  <div className="flex justify-between flex-wrap gap-10">
+                  <div className="flex justify-between flex-col w-96 gap-10 bg-white">
                     <div className="flex mobile:mx-auto mobile:hidden flex-col items-center h-full rounded-[16px]">
                       <div className="w-[200px] h-[200px]" />
                     </div>
@@ -700,7 +697,7 @@ const Products = () => {
                           </button>
                         </Link>
                         <div>
-                          <Link href={`/product/${item.slug}`}>
+                          <Link href={`/details`}>
                             <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
                               See details
                             </button>
@@ -711,14 +708,14 @@ const Products = () => {
                   </div>
 
                   <div className="mobile:grid flex-wrap text-quaternary justify-between mobile:grid-cols-2 mobile:grid-rows-2 flex gap-3 mt-10">
-                    {item.cover?.map((item2: any, j: number) => (
+                    {/* {item.cover?.map((item2: any, j: number) => (
                       <div key={j}>
                         <div className="flex min-w-[250px] mobile:min-w-full mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 mobile:py-3 border-quaternary">
                           <input type="radio" name="features" />
                           {item2.name}
                         </div>
                       </div>
-                    ))}
+                    ))} */}
 
                     <div
                       onClick={() => {

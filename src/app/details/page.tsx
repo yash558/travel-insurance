@@ -4,7 +4,7 @@ import { proposerDataone } from "@/app/screens/Proposer Details/data/data";
 import React, { useState } from "react";
 import Faaq from "../screens/Faaq/faaq";
 import FaaqOne from "../screens/Faaq/faaqone";
-
+import Image from "next/image";
 const Step1 = () => {
   const [activeTab, setActiveTab] = useState<any>(0);
   const data = [
@@ -79,9 +79,12 @@ const Step1 = () => {
               </div>
             ))}
           </div>
-          <div className="mobile:mt-5 mt-10">
+          <div className="mobile:mt-5">
             <div className="">
-              <h1 className="text-3xl text-secondary my-4 font-[600]">
+              <div className="flex items-center justify-center">
+              <Image src="/assets/details.png" className="h-40 w-56 w-full " alt="" height={500} width={500} />
+              </div>
+              <h1 className="text-3xl text-secondary my-4 font-[600] text-center mb-4">
                 {proposerDataone.tabs[activeTab]?.heading}
               </h1>
               {/* <p className="text-quaternary w-[70%] my-4">
@@ -186,7 +189,7 @@ const Step1 = () => {
                       <h1 className="text-xl text-secondary font-[600]">
                         {proposerDataone.tabs[activeTab]?.heading}
                       </h1>
-                      <p className="text-quaternary">
+                      <p className="text-quaternary font-[700]">
                         {proposerDataone.tabs[activeTab]?.desc}
                       </p>
                       <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">

@@ -99,24 +99,21 @@ const Filter = () => {
       relationId: 1,
       type: "popup",
       options: [
+     
         {
-          item: "Recommended",
+          item: "Below ₹ 5 Lakh",
           relationId: 1,
         },
         {
-          item: "Below Rs. 5 Lakh",
+          item: "₹ 5 - 10 Lakh",
           relationId: 2,
         },
         {
-          item: "Rs. 5 - 10 Lakh",
+          item: "₹ 50 - 80 Lakh",
           relationId: 3,
         },
         {
-          item: "Rs. 50 - 80 Lakh",
-          relationId: 4,
-        },
-        {
-          item: "Rs. 1 Crore",
+          item: "₹ 1 Crore+",
           relationId: 4,
         },
       ],
@@ -127,7 +124,7 @@ const Filter = () => {
       type: "popup",
       options: [
         {
-          img: "/assets/insurance-companies/niva.png",
+          
           item: "Niva Bupa (formely known as Max Bupa)",
           relationId: 1,
         },
@@ -143,6 +140,16 @@ const Filter = () => {
           item: "Niva Bupa (formely known as Max Bupa)",
           relationId: 1,
         },
+        {
+          img: "/assets/insurance-companies/niva.png",
+          item: "Niva Bupa (formely known as Max Bupa)",
+          relationId: 2,
+        },
+        {
+          img: "/assets/insurance-companies/niva.png",
+          item: "Niva Bupa (formely known as Max Bupa)",
+          relationId: 3,
+        },
       ],
     },
     {
@@ -151,9 +158,39 @@ const Filter = () => {
       type: "popup",
       options: [
         {
-          img: "/assets/insurance-companies/niva.png",
-          item: "Niva Bupa (formely known as Max Bupa)",
+          
+          item: "Tourist/Visitor Visa",
           relationId: 1,
+        },
+        {
+          
+          item: "Short term work Visa",
+          relationId: 2,
+        },
+        {
+          
+          item: "Permanent Resident Card  visa",
+          relationId: 3,
+        },
+        {
+          
+          item: "Long term work Visaa",
+          relationId: 4,
+        },
+        {
+          
+          item: "Dependent Visa",
+          relationId: 5,
+        },
+        {
+          
+          item: "Diplomatic Visa",
+          relationId: 6,
+        },
+        {
+          
+          item: "Expat  (No Visa Required)",
+          relationId: 7,
         },
       ],
     },
@@ -163,9 +200,39 @@ const Filter = () => {
       type: "popup",
       options: [
         {
-          img: "/assets/insurance-companies/niva.png",
-          item: "Niva Bupa (formely known as Max Bupa)",
+          
+          item: "Pre-existing disease covered",
           relationId: 1,
+        },
+        {
+          
+          item: "Adventure sports Covered",
+          relationId: 2,
+        },
+        {
+          
+          item: "Pet Care",
+          relationId: 3,
+        },
+        {
+          
+          item: "Coverage on Cruise",
+          relationId: 4,
+        },
+        {
+          
+          item: "Home Burglary Covered",
+          relationId: 5,
+        },
+        {
+          
+          item: "Card Fraud",
+          relationId: 6,
+        },
+        {
+          
+          item: "No medical sublimit",
+          relationId: 7,
         },
       ],
     },
@@ -175,8 +242,33 @@ const Filter = () => {
       type: "popup",
       options: [
         {
-          img: "/assets/insurance-companies/niva.png",
-          item: "Niva Bupa (formely known as Max Bupa)",
+          
+          item: "Going home",
+          relationId: 1,
+        },
+        {
+          
+          item: "Holiday/Tourism",
+          relationId: 1,
+        },
+        {
+          
+          item: "Studies",
+          relationId: 1,
+        },
+        {
+          
+          item: "Business /Work",
+          relationId: 1,
+        },
+        {
+          
+          item: "Relocation",
+          relationId: 1,
+        },
+        {
+          
+          item: "Medical Treatment",
           relationId: 1,
         },
       ],

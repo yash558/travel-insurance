@@ -26,7 +26,7 @@ const Step2 = () => {
 
 
 
-  const qualificationData = ["X Pass", "XII Pass", "Graduate", "Post Graduate"];
+ 
 
   return (
     <div>
@@ -56,6 +56,27 @@ const Step2 = () => {
           {medicalConditionData?.heading}
         </h1>
         <p className="text-[#253858] text-lg w-[60%] my-4">{medicalConditionData?.desc}</p>
+        <div className="flex items-start justify-start md:mt-0 pt-8 space-x-4">
+
+              <button
+                className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  // Handle "Yes" button click here
+                }}
+              >
+                Yes
+              </button>
+              <button
+                className="border-2 border-[#0A225F] text-[#0A225F] font-bold py-2 px-4 rounded"
+                onClick={() => {
+                  // Handle "No" button click here
+                }}
+              >
+                No
+              </button>
+
+
+            </div>
         <div className="flex justify-between">
         <div className="list-decimal flex flex-col items-center justify-center">
          <CheckBox/>
