@@ -2,7 +2,7 @@ import Container from "@/app/container/Container";
 import React from "react";
 import Plans from "./components/Plans";
 import { compariableData, products } from "@/app/data/home/plans";
-
+import Link from "next/link";
 const ComparePlans = () => {
   return (
     <div className="bg-[#f4f5f7] pb-10">
@@ -32,13 +32,14 @@ const ComparePlans = () => {
                                       Best in the comparison
                                     </span>
                                   </div>
-                                  {item3.buyNowBtn && (
+                                  {/* {item3.buyNowBtn && (
                                     <div>
                                       <button className="bg-primary w-[250px] mobile:w-full px-4 py-2 rounded-md text-white font-[600]">
                                         Buy Now
                                       </button>
                                     </div>
-                                  )}
+                                  )} */}
+                                  
                                 </div>
                               );
                             })}
@@ -52,13 +53,17 @@ const ComparePlans = () => {
             </div>
           </div>
         ))}
-        {/* <div className="flex">
-          {Array.from({ length: 4 }).map((item, i) => (
-            <div key={i}>
-              <button>Buy Now</button>
+        <div className="grid grid-cols-3 mt-8  gap-4">
+          {Array.from({ length: 3 }).map((item, i) => (
+            <div key={i} className="ml-28">
+              <Link href="/proposer-details">
+               <button className="bg-primary w-[250px] mobile:w-full px-4 py-2 rounded-md text-white font-[600]">
+                                        Buy Now
+                                      </button>
+                                    </Link>
             </div>
           ))}
-        </div> */}
+        </div>
       </Container>
     </div>
   );
