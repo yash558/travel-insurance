@@ -53,7 +53,7 @@ const FaaqTwo: React.FC = () => {
 
   return (
     <>
-      <div className="h-full">
+      <div className="h-full m-4">
         <div className=" mx-auto w-full  max-w-7xl">
         
      

@@ -59,21 +59,21 @@ const Step1 = () => {
     );
   };
   return (
-    <div className="md:p-0 p-8">
+    <div className="">
       <div>
-        <div className="flex mobile:hidden gap-10 mobile:flex-wrap ">
-          <div className="flex flex-col justify-center h-[600px] mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
+        <div className="flex gap-10 mobile:flex-wrap ">
+          <div className="flex flex-col justify-center p-2 md:h-[600px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-10 md:p-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerDataone?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
                 key={i}
-                className={`flex cursor-pointer w-[300px] ${
+                className={`flex cursor-pointer rounded-2xl md:w-[300px] w-[200] ${
                   activeTab === i
-                    ? "bg-white text-secondary rounded-[35px] mobile:rounded-[35px] rounded-s-none"
-                    : "bg-secondary text-white"
+                    ? "text-white bg-secondary rounded-[35px] "
+                    : "text-secondary border border-secondary bg-white"
                 }`}
               >
-                <div className="text-xl mobile:text-xs rounded-[8px] px-5 py-2">
+                <div className="md:text-xl mobile:text-xs rounded-[8px] px-5 py-2">
                   {item.tab}
                 </div>
               </div>
@@ -135,7 +135,7 @@ const Step1 = () => {
               </div> */}
               {
                 activeTab === 0 &&
-              <div className=" flex gap-10 mr-8 flex-wrap items-center justify-start">
+              <div className=" flex gap-10 md:mr-8 flex-wrap items-center md:justify-start justify-center">
                 {data.map((item, index) => (
                   <MedicalExpensesCard
                     key={index} // Add a unique key when rendering in a list
@@ -147,29 +147,27 @@ const Step1 = () => {
               </div>
               }
                  {activeTab === 1 && (
-                <div className="flex flex-wrap p-8 mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
+
                   <Faaq/>
-                </div>
+                
               )}
                  {activeTab === 2 && (
-                <div className="flex flex-wrap p-8 mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
                   <FaaqOne/>
-                </div>
+                
               )}
                  {activeTab === 3 && (
-                <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 mobile:grid-rows-2 gap-2 mt-10 mobile:gap-4">
                   <Faaq/>
-                </div>
+                
               )}
                
             </div>
-            <div className="flex items-end justify-end mr-10">
+            <div className="flex items-end md:justify-end justify-center mt-8 md:mr-10">
               <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md ">Proceed to buy</button>
             </div>
           </div>
         </div>
 
-        <div className="flex desktop:hidden flex-col gap-5">
+        <div className="hidden flex-col gap-5">
           {proposerDataone?.tabs?.map((item, i) => (
             <div key={i}>
               <div

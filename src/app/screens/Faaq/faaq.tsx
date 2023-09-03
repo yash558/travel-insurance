@@ -19,26 +19,26 @@ const Faaq: React.FC = () => {
 
   const data: FaqItem[] = [
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Trip Cancellation ",
+      subtitle: "$1,500 No deductible",
+      answer:
+        "Pays for your prepaid, non-refundable expenses if the trip gets canceled due to serious illness, injury, extreme weather, or an accident among other reasons",
+    },
+    {
+      question: "Trip Delay",
+      subtitle: "Not covered",
+      answer:
+        "Compensates the insured for essential expenses if the flight is delayed due to reasons beyond your control.",
+    },
+    {
+      question: "Missed Connection",
+      subtitle: "$300 No deductible",
       answer:
         "Compensates you if the airlines loses your check-in bag",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Hijacking Benefits",
+      subtitle: "$3,000 No deductible",
       answer:
         "Compensates you if the airlines loses your check-in bag",
     },
@@ -53,10 +53,10 @@ const Faaq: React.FC = () => {
 
   return (
     <>
-      <div className="h-full">
+      <div className="h-full m-4">
         <div className=" mx-auto w-full  max-w-7xl">
-        
-     
+
+
           <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
             {data.map((item, index) => (
               <FaqCard

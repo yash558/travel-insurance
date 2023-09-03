@@ -7,7 +7,7 @@ const Summary = () => {
   return (
     <div>
       <div>
-        <div className="mobile:w-full mobile:hidden mobile:mt-10 mt-10 w-[350px]">
+        <div className="mobile:w-full  mobile:mt-10 mt-10 w-[350px]">
           <div className="shadow-md bg-white p-5">
             <div>
               <div className="flex justify-between items-center gap-5">
@@ -55,7 +55,7 @@ const Summary = () => {
             </div>
           </div>
         </div>
-        <div className="mobile:w-full desktop:hidden mobile:mt-10 mt-10 w-[350px]">
+        <div className="hidden mobile:mt-10 mt-10 w-[350px]">
           <div className="shadow-md  h-screen  bg-white p-5">
             <div>
               <div className="flex justify-between items-center gap-5">

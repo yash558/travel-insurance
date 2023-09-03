@@ -13,7 +13,7 @@ const Step1 = () => {
         <Indicators step={1} />
       </div>
       <div>
-        <div className="flex mobile:hidden gap-10 mobile:flex-wrap justify-between">
+        <div className="flex  gap-10 mobile:flex-wrap-reverse justify-between">
           {/* <div className="flex flex-col justify-center mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerData?.tabs?.map((item, i) => (
               <div
@@ -36,7 +36,7 @@ const Step1 = () => {
               <h1 className="text-3xl text-secondary font-[600]">
                 {proposerData.tabs[activeTab]?.heading}
               </h1>
-              <p className="text-quaternary w-[70%] my-4">
+              <p className="text-quaternary md:w-[70%] my-4">
                 {proposerData.tabs[activeTab]?.desc}
               </p>
               {activeTab === 1 && (
@@ -95,12 +95,12 @@ const Step1 = () => {
               </div>
             </div>
           </div>
-          <div className="mobile:hidden">
+          <div className="">
             <Summary />
           </div>
         </div>
 
-        <div className="flex desktop:hidden flex-col gap-5">
+        <div className="hidden flex-col gap-5">
           {proposerData?.tabs?.map((item, i) => (
             <div key={i}>
               <div
