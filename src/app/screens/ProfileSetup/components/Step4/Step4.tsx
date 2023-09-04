@@ -6,6 +6,7 @@ import cities from "./data/cities.json";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useProfileSetupStateContext } from "../../context/ProfileSetupStateContext";
 import Image from "next/image";
+import ImageSlider from "../../components/ImageSlider";
 const Step4 = () => {
   const { profileSetupStates, setProfileSetupStates } =
   useProfileSetupStateContext();
@@ -35,13 +36,7 @@ const BackClickHandler = () => {
 
       <SelectCity data={cities} />
       <div className="">
-          <Image
-            src="/assets/bg.png"
-            className="w-[600px] rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
-            width={200}
-            height={200}
-            alt="Logo"
-          />
+      <ImageSlider/>
         </div>
   </div>
 

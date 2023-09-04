@@ -4,6 +4,7 @@ import { useProfileSetupStateContext } from "../../context/ProfileSetupStateCont
 import DesktopStep1 from "./components/DesktopStep1";
 import MobileStep1 from "./components/MobileStep1";
 import Image from "next/image";
+import ImageSlider from "../../components/ImageSlider";
 const Step1 = ({ data }: { data: any }) => {
   const btns = [
     {
@@ -144,13 +145,14 @@ const Step1 = ({ data }: { data: any }) => {
                 </div>
               </div>
               <div className="">
-                <Image
+                {/* <Image
                   src="/assets/bg.png"
                   className="w-[700px] -mt-32 rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:hidden"
                   width={200}
                   height={200}
                   alt="Logo"
-                />
+                /> */}
+                <ImageSlider/>
               </div>
             </div>
           </div>

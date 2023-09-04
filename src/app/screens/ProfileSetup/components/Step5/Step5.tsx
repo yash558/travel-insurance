@@ -9,6 +9,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
 import Image from "next/image";
+import ImageSlider from "../../components/ImageSlider";
 const Step5 = () => {
   const { profileSetupStates, setProfileSetupStates } =
     useProfileSetupStateContext();
@@ -60,13 +61,7 @@ const Step5 = () => {
       />
     </div>
         <div className="">
-          <Image
-            src="/assets/bg.png"
-            className="w-[600px] md:flex hidden rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
-            width={200}
-            height={200}
-            alt="Logo"
-          />
+        <ImageSlider/>
         </div>
       </div>
 
