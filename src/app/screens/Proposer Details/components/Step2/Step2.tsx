@@ -22,8 +22,23 @@ const Step2 = () => {
     }));
   };
 
+  type FormData = {
+    declinedInsurance: boolean;
+    politicallyExposed: boolean;
+    hospitalized: boolean;
+    adverseFindings: boolean;
+    diabetes: boolean;
+    highBloodPressure: boolean;
+    geneticDisorder: boolean;
+    mentalDisorder: boolean;
+    smoke: boolean;
+    alcohol: boolean;
+    chewTobacco: boolean;
+  };
+  
+
   const [formData, setFormData] = useState<FormData>({
-    
+    declinedInsurance: false,
     politicallyExposed: false,
     hospitalized: false,
     adverseFindings: false,
@@ -35,7 +50,8 @@ const Step2 = () => {
     alcohol: false,
     chewTobacco: false,
   });
-
+  
+  
   const [toggleSelected, setToggleSelected] = useState(false);
   const [toggledIndex, setToggledIndex] = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
