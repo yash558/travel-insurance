@@ -22,34 +22,6 @@ const Step2 = () => {
     }));
   };
 
-  type FormData = {
-    declinedInsurance: boolean;
-    politicallyExposed: boolean;
-    hospitalized: boolean;
-    adverseFindings: boolean;
-    diabetes: boolean;
-    highBloodPressure: boolean;
-    geneticDisorder: boolean;
-    mentalDisorder: boolean;
-    smoke: boolean;
-    alcohol: boolean;
-    chewTobacco: boolean;
-  };
-  
-
-  const [formData, setFormData] = useState<FormData>({
-    declinedInsurance: false,
-    politicallyExposed: false,
-    hospitalized: false,
-    adverseFindings: false,
-    diabetes: false,
-    highBloodPressure: false,
-    geneticDisorder: false,
-    mentalDisorder: false,
-    smoke: false,
-    alcohol: false,
-    chewTobacco: false,
-  });
   
   
   const [toggleSelected, setToggleSelected] = useState(false);
@@ -107,12 +79,6 @@ const Step2 = () => {
     },
   ];
 
-  const handleToggle = (field: keyof FormData) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [field]: !prevData[field],
-    }));
-  };
 
 
 
