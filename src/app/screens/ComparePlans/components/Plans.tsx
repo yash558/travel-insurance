@@ -17,14 +17,14 @@ const Plans = () => {
         <div className="mt-10 flex flex-col mobile:flex-wrap items-center gap-20">
           <div className="flex items-center justify-center flex-col">
             <p className="text-[#0A225F] text-lg">Who would you like to insure?</p>
-            <div></div>
-            <h3 className="text-secondary font-[600] text-4xl">Find top travel insurance plans</h3>
+            <div className="flex items-center justify-center bg-[#36B37E] h-[2px] w-[40%]"></div>
+            <h3 className="text-secondary font-[600] md:text-4xl text-center text-2xl">Find top travel insurance plans</h3>
           </div>
           <div className="flex flex-wrap mobile:justify-center gap-2 mobile:gap-5">
             {products?.map((item, i) => (
               <div
                 key={i}
-                className="flex bg-white shadow-md w-[250px] mobile:w-[165px] p-5 flex-col"
+                className="flex bg-white shadow-md md:w-[250px]  p-5 flex-col"
               >
                 <div className="flex justify-end">
                   <RxCross1 className="cursor-pointer" />
