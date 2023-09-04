@@ -22,31 +22,31 @@ const FaaqOne: React.FC = () => {
       question: "Baggage Loss",
       subtitle: "$500 No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Ensures you're compensated if the airline mishandles your checked baggage, offering peace of mind during your travels.",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Loss of Passport",
+      subtitle: "$300 No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Covers the cost of getting a duplicate passport or travel documents during the trip if the same gets lost due to unforseen events",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Delay in Checked-in Baggage",
+      subtitle: "$100 Deductible: 10 hrs for abroad/10 hrs for india",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Pays for essentials or emergency purchase that insured person needs to buy if the airline delays the check-in baggage",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Personal Liability",
+      subtitle: "$100,000 No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "This specific benefit helps in covering any unintentionally injury or damage where the travelling person becomes liable to compensate the third party as per the damage/loss incurred.",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Loss of Driving license",
+      subtitle: "Covered in loss of passport No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Covers the cost of getting a duplicate international driving license during the trip",
     },
     // Add more FAQ items here if needed
   ];

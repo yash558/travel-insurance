@@ -34,19 +34,25 @@ const Faaq: React.FC = () => {
       question: "Missed Connection",
       subtitle: "$300 No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Covers the costs of your unplanned expenses if you miss the connecting flight.",
     },
     {
       question: "Hijacking Benefits",
       subtitle: "$3,000 No deductible",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "COffers financial support in case if your flight or ship is hijacked when travelling abroad",
     },
     {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
+      question: "Upgradation to Business Class",
+      subtitle: " Not covered",
       answer:
-        "Compensates you if the airlines loses your check-in bag",
+        "Covers the cost of upgrading your return ticket to business class if you get injured on the trip",
+    },
+    {
+      question: "Trip Interruptions",
+      subtitle: "$750 No deductible",
+      answer:
+        "Covers unplanned expenses if you need to return suddenly due to the death or hospitalization of a family member, bankruptcy or an airline carrier strike etc.",
     },
     // Add more FAQ items here if needed
   ];

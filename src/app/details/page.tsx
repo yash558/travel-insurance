@@ -4,7 +4,10 @@ import { proposerDataone } from "@/app/screens/Proposer Details/data/data";
 import React, { useState } from "react";
 import Faaq from "../screens/Faaq/faaq";
 import FaaqOne from "../screens/Faaq/faaqone";
+import FaaqTwo from "../screens/Faaq/faaqtwo";
 import Image from "next/image";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import Link from "next/link";
 const Step1 = () => {
   const [activeTab, setActiveTab] = useState<any>(0);
   const data = [
@@ -61,8 +64,18 @@ const Step1 = () => {
   return (
     <div className="">
       <div>
+      <Link href="/view-plans" className="  flex items-center space-x-2">
+     
+      <span className="bg-secondary text-white p-4 rounded-md m-4 flex gap-2">
+        <AiOutlineArrowLeft
+          className="cursor-pointer"
+          color="#ffffff"
+          size={24}
+          
+        />Back</span>
+    </Link>
         <div className="flex gap-10 mobile:flex-wrap ">
-          <div className="flex flex-col justify-center p-2 md:h-[600px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-10 md:p-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
+          <div className="flex flex-col justify-center p-2 md:h-[600px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-1 md:p-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerDataone?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
@@ -156,13 +169,15 @@ const Step1 = () => {
                 
               )}
                  {activeTab === 3 && (
-                  <Faaq/>
+                  <FaaqTwo/>
                 
               )}
                
             </div>
             <div className="flex items-end md:justify-end justify-center mt-8 md:mr-10">
+              <Link href="/proposer-details">
               <button className="px-14 py-3 bg-[#F5AB01] text-white  rounded-md ">Proceed to buy</button>
+              </Link>
             </div>
           </div>
         </div>

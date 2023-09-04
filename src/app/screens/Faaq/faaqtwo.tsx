@@ -18,37 +18,40 @@ const FaaqTwo: React.FC = () => {
   };
 
   const data: FaqItem[] = [
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    {
-      question: "Baggage Loss",
-      subtitle: "$500 No deductible",
-      answer:
-        "Compensates you if the airlines loses your check-in bag",
-    },
-    // Add more FAQ items here if needed
+   {
+  question: "Medical Expenses",
+  subtitle: "$100,000 Deductible: $100",
+  answer: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+},
+{
+  question: "Dental Treatment",
+  subtitle: "$500 Deductible: $25",
+  answer: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+},
+{
+  question: "Personal Accident",
+  subtitle: "$12,000 No deductible",
+  answer: "Fingers Crossed you never need this. This will offer financial support in case of an accidental death or disability during the trip.",
+},
+{
+  question: "Medical Evacuation ",
+  subtitle: "Part of medical expenses No deductible",
+  answer: "This benefit covers expenses incurred in making arrangements to transport insured to a medical facility or back home if necessary",
+},
+
+{
+  question: "Financial Emergency Assistance",
+  subtitle: "$1,000 No deductible",
+  answer: "Offers $1,000 coverage for financial emergency assistance with no deductible.",
+},
+
+{
+  question: "Common Carrier Accidental Death",
+  subtitle: "$6,000 No deductible",
+  answer: "Covers Common Carrier Accidental Death with a $6,000 benefit and no deductible.",
+},
+
+
   ];
 
   return (

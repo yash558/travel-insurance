@@ -613,6 +613,15 @@ const Products = () => {
                     <div className="flex mobile:mx-auto mobile:hidden flex-col items-start h-full rounded-[16px]">
                       <div className="w-[200px] h-[200px]" />
                     </div>
+                    <div className="flex items-center justify-center">
+                    <Image
+                      className="object-contain"
+                      src={item.img}
+                      width={200}
+                      height={200}
+                      alt={item.name}
+                    />
+                    </div>
                     <div className="mobile:mx-auto">
                       <div className="flex gap-3 items-center">
                         <h1 className="text-secondary text-2xl font-[600]">

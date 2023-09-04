@@ -13,7 +13,7 @@ interface FaqCardProps {
 
 const FaqCard: FC<FaqCardProps> = ({ open, toggle, title, subtitle, desc }) => {
   return (
-    <div className="flex items-start">
+    <div className="flex items-start w-full">
    <div className={`shadow-xl rounded border border-t-0 ${open ? 'border-blue-500' : ''} mt-5`}>
         <div className="p-4 text-xl relative font-medium">
           <div className="w-full pr-8 text-2xl text-[800] text-black" onClick={toggle}>
