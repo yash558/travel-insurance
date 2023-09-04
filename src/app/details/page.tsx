@@ -69,8 +69,8 @@ const Step1 = () => {
                 key={i}
                 className={`flex cursor-pointer rounded-2xl md:w-[300px] w-[200] ${
                   activeTab === i
-                    ? "text-white bg-secondary rounded-[35px] "
-                    : "text-secondary border border-secondary bg-white"
+                    ? "text-white bg-secondary md:bg-white md:text-secondary rounded-[35px] "
+                    : "text-secondary border border-secondary md:bg-secondary md:text-white bg-white"
                 }`}
               >
                 <div className="md:text-xl mobile:text-xs rounded-[8px] px-5 py-2">

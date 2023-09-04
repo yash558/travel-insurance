@@ -22,7 +22,7 @@ const ComparePlans = () => {
                     <div key={i}>
                       <div>
                         {item.slug === "care-supreme-direct" && (
-                          <div className="flex flex-wrap gap-10 mobile:gap-2">
+                          <div className="md:flex md:flex-wrap   grid grid-cols-3 gap-10 mobile:gap-2">
                             {item.features?.map((item2, j) => {
                               return (
                                 <div key={j} className="flex flex-col flex-wrap gap-10 mobile:gap-5">
@@ -55,7 +55,7 @@ const ComparePlans = () => {
         ))}
         <div className="grid grid-cols-3 mt-8  gap-4">
           {Array.from({ length: 3 }).map((item, i) => (
-            <div key={i} className="ml-28">
+            <div key={i} className="md:ml-28">
               <Link href="/proposer-details">
                <button className="bg-primary w-[250px] mobile:w-full px-4 py-2 rounded-md text-white font-[600]">
                                         Buy Now
