@@ -64,7 +64,7 @@ const Step1 = ({ data }: { data: any }) => {
     <div>
       <Indicators step={1} />
 
-      <div className="text-left mt-5">
+      <div className="text-left mt-10">
         <h2 className="text-[40px] mobile:text-[22px] mt-4 mb-4 text-secondary font-[600]">
           {data?.heading}
         </h2>
@@ -77,7 +77,7 @@ const Step1 = ({ data }: { data: any }) => {
       <div className="flex justify-left">
         <div className="">
           <div className="flex items-center justify-center">
-            <div className="flex justify-left flex-row mt-5">
+            <div className="flex justify-left items-start flex-row ">
               {/* mobile */}
               {/* <MobileStep1
               data={data}
@@ -144,7 +144,7 @@ const Step1 = ({ data }: { data: any }) => {
                   ))}
                 </div>
               </div>
-              <div className="">
+              <div className="mt-[-10rem] ">
                 {/* <Image
                   src="/assets/bg.png"
                   className="w-[700px] -mt-32 rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:hidden"

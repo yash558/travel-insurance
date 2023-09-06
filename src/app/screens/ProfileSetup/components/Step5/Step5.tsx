@@ -60,7 +60,7 @@ const Step5 = () => {
         }}
       />
     </div>
-        <div className="">
+        <div className="mt-[-8rem]">
         <ImageSlider/>
         </div>
       </div>

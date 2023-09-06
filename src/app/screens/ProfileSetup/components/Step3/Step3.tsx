@@ -101,7 +101,7 @@ const Step3 = () => {
             />
           </div>
         </div>
-        <div className="">
+        <div className="mt-[-5rem]">
         <ImageSlider/>
         </div>
       </div>

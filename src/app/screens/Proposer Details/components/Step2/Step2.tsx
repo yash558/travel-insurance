@@ -86,7 +86,7 @@ const Step2 = () => {
  
 
   return (
-    <div>
+    <div className="">
       <div className="mb-10">
         <AiOutlineArrowLeft
           className="cursor-pointer"
@@ -113,17 +113,17 @@ const Step2 = () => {
       <h1 className="text-[#0A225F] text-xl">We’ll only ask for the details insurance companies need</h1>
       <div>
         {questions.map((question: any, index: number) => (
-          <div key={question.id} className="flex flex-wrap justify-between items-center my-8">
+          <div key={question.id} className="flex md:flex-row flex-col justify-between items-center my-4">
             <div className="md:w-[60%] w-[90%] flex gap-4">
               <h1>{index + 1}</h1>
               <label className="">{question.text}</label>
             </div>
 
-            <div className="flex items-center justify-center">
-            <div className="flex items-center justify-center md:mt-0 md:pt-8 pt-4 space-x-4">
+           
+            <div className="flex items-center justify-center text-center   space-x-4">
 
               <button
-                className="bg-[#0A225F] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-[#0A225F] flex items-center justify-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 onClick={() => {
                   // Handle "Yes" button click here
                 }}
@@ -131,7 +131,7 @@ const Step2 = () => {
                 Yes
               </button>
               <button
-                className="border-2 border-[#0A225F] text-[#0A225F] font-bold py-2 px-4 rounded"
+                className="border-2 border-[#0A225F] text-[#0A225F] flex items-center font-bold py-2 px-4 rounded"
                 onClick={() => {
                   // Handle "No" button click here
                 }}
@@ -142,7 +142,7 @@ const Step2 = () => {
 
             </div>
             </div>
-          </div>
+          
         ))}
         <div className="my-4">
 
