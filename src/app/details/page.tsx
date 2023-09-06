@@ -75,7 +75,7 @@ const Step1 = () => {
         />Back</span>
     </Link>
         <div className="flex gap-10 mobile:flex-wrap ">
-          <div className="flex flex-col justify-center pr-2 md:h-[600px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-1 md:pr-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
+          <div className="flex flex-col justify-center pr-2 md:h-[500px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-1 md:pr-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
             {proposerDataone?.tabs?.map((item, i) => (
               <div
                 onClick={() => setActiveTab(i)}
@@ -92,7 +92,7 @@ const Step1 = () => {
               </div>
             ))}
           </div>
-          <div className="mobile:mt-5 mb-10">
+          <div className="mobile:mt-5 mb-10 mt-[-6rem]">
             <div className="">
               <div className="flex items-center justify-center">
               <Image src="/assets/details.png" className="h-40 w-56" alt="" height={500} width={500} />
