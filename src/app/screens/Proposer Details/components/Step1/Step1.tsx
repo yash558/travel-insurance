@@ -95,7 +95,7 @@ const Step1 = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className="mobile:hidden">
             <Summary />
           </div>
         </div>

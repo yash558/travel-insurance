@@ -118,6 +118,8 @@ const Step2 = () => {
               <h1>{index + 1}</h1>
               <label className="">{question.text}</label>
             </div>
+
+            <div className="flex items-center justify-center">
             <div className="flex items-center justify-center md:mt-0 md:pt-8 pt-4 space-x-4">
 
               <button
@@ -138,6 +140,7 @@ const Step2 = () => {
               </button>
 
 
+            </div>
             </div>
           </div>
         ))}

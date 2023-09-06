@@ -18,7 +18,7 @@ const Indicators = ({ step }: { step: number }) => {
         {steps.map((item, i) => (
           <div key={i}>
             <div>
-              <span className="text-secondary w-[20%] absolute mt-[-25px] ms-[-8px] mobile:ms-[0] md:text-sm text-xs">
+              <span className={`text-secondary w-[20%] absolute mt-[-25px] ms-[-8px] ${i % 2 === 0 ? "mobile:ms-[0]" : ""} md:text-sm text-xs`}>
                 {titles[i]}
               </span>
             </div>

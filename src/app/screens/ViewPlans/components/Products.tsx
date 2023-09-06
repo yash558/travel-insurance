@@ -429,7 +429,8 @@ const Products = () => {
       )}
 
       <Container>
-        <div className="flex flex-col gap-10">
+        <div className="flex items-center">
+        <div className="flex flex-col gap-10 w-full">
           <span className="flex justify-end">
             <span
               onClick={() =>
@@ -451,16 +452,16 @@ const Products = () => {
               <span>Sort by</span>
             </span>
           </span>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+          <div className="md:flex md:flex-wrap gap-8">
             {products?.map((item: any, i: number) => (
-              <div key={i} className="">
+              <div key={i} className="w-[400px]">
                 <div className="flex justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                   <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                     <Image
                       className="object-contain"
                       src={item.img}
-                      width={200}
-                      height={200}
+                      width={150}
+                      height={150}
                       alt={item.name}
                     />
                     {showMorePlans ? (
@@ -469,7 +470,7 @@ const Products = () => {
                           setShowMorePlans(false);
                           setCurrentPlanOpenedIndex(i);
                         }}
-                        className="flex cursor-pointer flex-col items-center my-3 gap-2"
+                        className="flex cursor-pointer flex-col items-center mt-3 gap-2"
                       >
                         <span className="text-tertiary">Hide Plans</span>
                         <IoIosArrowUp color="#36B37E" />
@@ -479,7 +480,7 @@ const Products = () => {
                         onClick={() => {
                           setShowMorePlans(true);
                         }}
-                        className="flex cursor-pointer flex-col items-center my-3 gap-2"
+                        className="flex cursor-pointer flex-col items-center mt-3 gap-2"
                       >
                         <span className="text-tertiary">
                           {products[0]?.nestedPlans?.length} More Plans
@@ -605,7 +606,7 @@ const Products = () => {
           </div>
         </div>
         {showMorePlans && (
-          <div className="flex flex-wrap gap-8 mt-20">
+          <div className="md:flex  gap-8 mt-20">
             {products[currentPlanOpenedIndex]?.nestedPlans?.map(
               (item: any, i: number) => (
                 <div key={i} className="gap-10 bg-white rounded-xl shadow-md p-4">
@@ -617,8 +618,8 @@ const Products = () => {
                     <Image
                       className="object-contain"
                       src={item.img}
-                      width={200}
-                      height={200}
+                      width={150}
+                      height={150}
                       alt={item.name}
                     />
                     </div>
@@ -748,6 +749,7 @@ const Products = () => {
             )}
           </div>
         )}
+        </div>
       </Container>
     </div>
   );

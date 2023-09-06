@@ -13,17 +13,17 @@ const Indicators = ({ step }: { step: number }) => {
                 <div>
                   {i === 0 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] mobile:ms-[0] text-sm">
-                      
+
                     </span>
                   )}
                   {i === 1 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] text-sm">
-                      
+
                     </span>
                   )}
                   {i === 2 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] text-sm">
-                     
+
                     </span>
                   )}
                 </div>
@@ -43,17 +43,17 @@ const Indicators = ({ step }: { step: number }) => {
                 <div>
                   {i === 0 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] text-sm">
-                      
+
                     </span>
                   )}
                   {i === 1 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] text-sm">
-                      
+
                     </span>
                   )}
                   {i === 2 && (
                     <span className="text-secondary absolute mt-[-25px] ms-[-8px] mobile:ms-[-30px] text-sm">
-                      
+
                     </span>
                   )}
                 </div>
