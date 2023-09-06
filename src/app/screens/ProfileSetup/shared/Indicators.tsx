@@ -16,9 +16,13 @@ const Indicators = ({ step }: { step: number }) => {
       <div className="flex relative justify-between items-center w-[80%] mobile:w-full font-bold text-lg">
         <div className="w-full z-[-1] absolute h-[2px] bg-black bg-opacity-75" />
         {steps.map((item, i) => (
-          <div key={i}>
+          <div key={i} className="relative">
             <div>
-              <span className={`text-secondary w-[20%] absolute mt-[-25px] ms-[-8px] ${i % 2 === 0 ? "mobile:ms-[0]" : ""} md:text-sm text-xs`}>
+              <span
+                className={`text-secondary w-[100%] absolute mt-[-25px] ms-[-8px] ${
+                  i % 2 === 0 ? "flex" : "hidden"
+                } md:text-sm text-xs`}
+              >
                 {titles[i]}
               </span>
             </div>
