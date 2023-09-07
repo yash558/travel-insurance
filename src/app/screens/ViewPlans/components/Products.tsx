@@ -153,12 +153,9 @@ const Products = () => {
     ],
   };
 
-  console.log(currentPlanOpenedIndex);
-
   const [plans, setPlans] = useState<any>([]);
-  const [nestedPlans, setNestedPlans] = useState<any>([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (!showMorePlans) {
       return;
     }
@@ -180,9 +177,26 @@ const Products = () => {
     });
 
     setPlans(finalArray);
+  }, [showMorePlans, currentPlanOpenedIndex]); */
 
-    console.log("Final Array: ", finalArray);
-  }, [showMorePlans, currentPlanOpenedIndex]);
+  let finalArray: any = [];
+
+  products?.forEach((item, i) => {
+    if (currentPlanOpenedIndex === i) {
+      finalArray.push(item);
+
+      if (item.nestedPlans) {
+        item.nestedPlans.forEach((nestedPlanItem) => {
+          finalArray.push({
+            ...nestedPlanItem,
+            nestedPlan: true,
+          });
+        });
+      }
+    } else {
+      finalArray.push(item);
+    }
+  });
 
   return (
     <div className="py-20">
@@ -487,15 +501,159 @@ const Products = () => {
                 <span>Sort by</span>
               </span>
             </span>
+
             {showMorePlans ? (
               <div className="flex gap-5 flex-wrap">
-                {plans?.map((item: any, i: number) => (
-                  <div key={i} className="flex">
-                    <div>
-                      <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
-                        {item?.nestedPlan ? (
-                          <div className="flex h-[146px] mobile:mx-auto flex-col items-center bg-white rounded-[16px]"></div>
-                        ) : (
+                {finalArray?.map((item: any, i: number) => {
+                  return (
+                    <div key={i} className="flex">
+                      <div>
+                        <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
+                          {item.nestedPlan ? (
+                            <div className="flex h-[150px] mobile:mx-auto flex-col items-center bg-white rounded-[16px]"></div>
+                          ) : (
+                            <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
+                              <Image
+                                className="object-contain"
+                                src={item.img}
+                                width={150}
+                                height={150}
+                                alt={item.name}
+                              />
+                              {showMorePlans && currentPlanOpenedIndex === i ? (
+                                <div
+                                  onClick={() => {
+                                    setShowMorePlans(false);
+                                    setCurrentPlanOpenedIndex(i);
+                                  }}
+                                  className="flex cursor-pointer flex-col items-center mt-3 gap-2"
+                                >
+                                  <span className="text-tertiary">
+                                    Hide Plans
+                                  </span>
+                                  <IoIosArrowUp color="#36B37E" />
+                                </div>
+                              ) : (
+                                <div
+                                  onClick={() => {
+                                    setShowMorePlans(true);
+                                    setCurrentPlanOpenedIndex(i);
+                                  }}
+                                  className="flex cursor-pointer flex-col items-center mt-3 gap-2"
+                                >
+                                  <span className="text-tertiary">
+                                    {products[0]?.nestedPlans?.length} More
+                                    Plans
+                                  </span>
+                                  <IoIosArrowDown color="#36B37E" />
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          <div className="mobile:mx-auto">
+                            <div className="flex gap-3 items-center">
+                              <h1 className="text-secondary text-2xl font-[600]">
+                                {item.name}
+                              </h1>
+                            </div>
+                            <div className="text-quaternary">
+                              <div className="flex gap-2 items-center mt-2">
+                                <input
+                                  className="mobile:hidden"
+                                  onChange={(e) => {
+                                    if (selectedPlans?.length > 3) {
+                                      return;
+                                    }
+
+                                    setSelectedPlans((prev: any) => [
+                                      ...prev,
+                                      item.slug,
+                                    ]);
+                                  }}
+                                  type="checkbox"
+                                />
+                                <input
+                                  className="desktop:hidden"
+                                  onChange={(e) => {
+                                    if (selectedPlans?.length > 1) {
+                                      return;
+                                    }
+
+                                    setSelectedPlans((prev: any) => [
+                                      ...prev,
+                                      item.slug,
+                                    ]);
+                                  }}
+                                  type="checkbox"
+                                />
+                                <label>Compare other plans</label>
+                              </div>
+                              <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
+                                {item.features?.map((item2: any, j: number) => (
+                                  <div
+                                    key={j}
+                                    className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
+                                  >
+                                    <input type="radio" name="features" />
+                                    {item2.name}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mobile:mx-auto">
+                            <div className="flex gap-10">
+                              <div>
+                                <div>Cover amount</div>
+                                <div className="font-[600]">
+                                  {item.coverAmount}
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  onClick={() => setShowHospitals(true)}
+                                  className="flex cursor-pointer items-center gap-2"
+                                >
+                                  <div>Cashless Hospitals</div>
+                                  <IoIosArrowDown />
+                                </div>
+                                <div className="font-[600]">
+                                  {item.cashlessHospitals}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex justify-center">
+                              <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
+                            </div>
+                            <div className="mt-10 flex flex-col gap-5">
+                              <Link href="/proposer-details">
+                                <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
+                                  Rs. {item.monthlyPrice} monthly
+                                </button>
+                              </Link>
+
+                              <div>
+                                <Link href={`/details`}>
+                                  <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
+                                    See details
+                                  </button>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="flex gap-5 flex-wrap">
+                {products?.map((item: any, i: number) => {
+                  return (
+                    <div key={i} className="flex">
+                      <div>
+                        <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                           <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                             <Image
                               className="object-contain"
@@ -532,452 +690,102 @@ const Products = () => {
                               </div>
                             )}
                           </div>
-                        )}
-                        <div className="mobile:mx-auto">
-                          <div className="flex gap-3 items-center">
-                            <h1 className="text-secondary text-2xl font-[600]">
-                              {item.name}
-                            </h1>
-                          </div>
-                          <div className="text-quaternary">
-                            <div className="flex gap-2 items-center mt-2">
-                              <input
-                                className="mobile:hidden"
-                                onChange={(e) => {
-                                  if (selectedPlans?.length > 3) {
-                                    return;
-                                  }
-
-                                  setSelectedPlans((prev: any) => [
-                                    ...prev,
-                                    item.slug,
-                                  ]);
-                                }}
-                                type="checkbox"
-                              />
-                              <input
-                                className="desktop:hidden"
-                                onChange={(e) => {
-                                  if (selectedPlans?.length > 1) {
-                                    return;
-                                  }
-
-                                  setSelectedPlans((prev: any) => [
-                                    ...prev,
-                                    item.slug,
-                                  ]);
-                                }}
-                                type="checkbox"
-                              />
-                              <label>Compare other plans</label>
+                          <div className="mobile:mx-auto">
+                            <div className="flex gap-3 items-center">
+                              <h1 className="text-secondary text-2xl font-[600]">
+                                {item.name}
+                              </h1>
                             </div>
-                            <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
-                              {item.features?.map((item2: any, j: number) => (
-                                <div
-                                  key={j}
-                                  className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
-                                >
-                                  <input type="radio" name="features" />
-                                  {item2.name}
+                            <div className="text-quaternary">
+                              <div className="flex gap-2 items-center mt-2">
+                                <input
+                                  className="mobile:hidden"
+                                  onChange={(e) => {
+                                    if (selectedPlans?.length > 3) {
+                                      return;
+                                    }
+
+                                    setSelectedPlans((prev: any) => [
+                                      ...prev,
+                                      item.slug,
+                                    ]);
+                                  }}
+                                  type="checkbox"
+                                />
+                                <input
+                                  className="desktop:hidden"
+                                  onChange={(e) => {
+                                    if (selectedPlans?.length > 1) {
+                                      return;
+                                    }
+
+                                    setSelectedPlans((prev: any) => [
+                                      ...prev,
+                                      item.slug,
+                                    ]);
+                                  }}
+                                  type="checkbox"
+                                />
+                                <label>Compare other plans</label>
+                              </div>
+                              <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
+                                {item.features?.map((item2: any, j: number) => (
+                                  <div
+                                    key={j}
+                                    className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
+                                  >
+                                    <input type="radio" name="features" />
+                                    {item2.name}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mobile:mx-auto">
+                            <div className="flex gap-10">
+                              <div>
+                                <div>Cover amount</div>
+                                <div className="font-[600]">
+                                  {item.coverAmount}
                                 </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mobile:mx-auto">
-                          <div className="flex gap-10">
-                            <div>
-                              <div>Cover amount</div>
-                              <div className="font-[600]">
-                                {item.coverAmount}
+                              </div>
+                              <div>
+                                <div
+                                  onClick={() => setShowHospitals(true)}
+                                  className="flex cursor-pointer items-center gap-2"
+                                >
+                                  <div>Cashless Hospitals</div>
+                                  <IoIosArrowDown />
+                                </div>
+                                <div className="font-[600]">
+                                  {item.cashlessHospitals}
+                                </div>
                               </div>
                             </div>
-                            <div>
-                              <div
-                                onClick={() => setShowHospitals(true)}
-                                className="flex cursor-pointer items-center gap-2"
-                              >
-                                <div>Cashless Hospitals</div>
-                                <IoIosArrowDown />
-                              </div>
-                              <div className="font-[600]">
-                                {item.cashlessHospitals}
-                              </div>
+                            <div className="flex justify-center">
+                              <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
                             </div>
-                          </div>
-                          <div className="flex justify-center">
-                            <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
-                          </div>
-                          <div className="mt-10 flex flex-col gap-5">
-                            <Link href="/proposer-details">
-                              <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
-                                Rs. {item.monthlyPrice} monthly
-                              </button>
-                            </Link>
-
-                            <div>
-                              <Link href={`/details`}>
-                                <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
-                                  See details
+                            <div className="mt-10 flex flex-col gap-5">
+                              <Link href="/proposer-details">
+                                <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
+                                  Rs. {item.monthlyPrice} monthly
                                 </button>
                               </Link>
+
+                              <div>
+                                <Link href={`/details`}>
+                                  <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
+                                    See details
+                                  </button>
+                                </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    {/* {showMorePlans && currentPlanOpenedIndex === i && (
-                    <div className="flex flex-wrap gap-5 ms-5">
-                      {products[currentPlanOpenedIndex]?.nestedPlans?.map(
-                        (item: any, i: number) => (
-                          <div
-                            key={i}
-                            className="flex w-[420px] h-[720px] justify-end flex-col gap-10 bg-white p-8 rounded-xl shadow-md"
-                          >
-                            <div className="mobile:mx-auto">
-                              <div className="flex gap-3 items-center">
-                                <h1 className="text-secondary text-2xl font-[600]">
-                                  {item.name}
-                                </h1>
-                              </div>
-                              <div className="text-quaternary">
-                                <div className="flex gap-2 items-center mt-2">
-                                  <input
-                                    className="mobile:hidden"
-                                    onChange={(e) => {
-                                      if (selectedPlans?.length > 3) {
-                                        return;
-                                      }
-
-                                      setSelectedPlans((prev: any) => [
-                                        ...prev,
-                                        item.slug,
-                                      ]);
-                                    }}
-                                    type="checkbox"
-                                  />
-                                  <input
-                                    className="desktop:hidden"
-                                    onChange={(e) => {
-                                      if (selectedPlans?.length > 1) {
-                                        return;
-                                      }
-
-                                      setSelectedPlans((prev: any) => [
-                                        ...prev,
-                                        item.slug,
-                                      ]);
-                                    }}
-                                    type="checkbox"
-                                  />
-                                  <label>Compare other plans</label>
-                                </div>
-                                <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
-                                  {item.features?.map(
-                                    (item2: any, j: number) => (
-                                      <div
-                                        key={j}
-                                        className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
-                                      >
-                                        <input type="radio" name="features" />
-                                        {item2.name}
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mobile:mx-auto">
-                              <div className="flex gap-10">
-                                <div>
-                                  <div>Cover amount</div>
-                                  <div className="font-[600]">
-                                    {item.coverAmount}
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    onClick={() => setShowHospitals(true)}
-                                    className="flex cursor-pointer items-center gap-2"
-                                  >
-                                    <div>Cashless Hospitals</div>
-                                    <IoIosArrowDown />
-                                  </div>
-                                  <div className="font-[600]">
-                                    {item.cashlessHospitals}
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex justify-center">
-                                <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
-                              </div>
-                              <div className="mt-10 flex flex-col gap-5">
-                                <Link href="/proposer-details">
-                                  <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
-                                    Rs. {item.monthlyPrice} monthly
-                                  </button>
-                                </Link>
-
-                                <div>
-                                  <Link href={`/details`}>
-                                    <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
-                                      See details
-                                    </button>
-                                  </Link>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  )} */}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="flex gap-5 flex-wrap">
-                {products?.map((item: any, i: number) => (
-                  <div key={i} className="flex">
-                    <div>
-                      <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
-                        <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
-                          <Image
-                            className="object-contain"
-                            src={item.img}
-                            width={150}
-                            height={150}
-                            alt={item.name}
-                          />
-                          {showMorePlans && currentPlanOpenedIndex === i ? (
-                            <div
-                              onClick={() => {
-                                setShowMorePlans(false);
-                                setCurrentPlanOpenedIndex(i);
-                              }}
-                              className="flex cursor-pointer flex-col items-center mt-3 gap-2"
-                            >
-                              <span className="text-tertiary">Hide Plans</span>
-                              <IoIosArrowUp color="#36B37E" />
-                            </div>
-                          ) : (
-                            <div
-                              onClick={() => {
-                                setShowMorePlans(true);
-                                setCurrentPlanOpenedIndex(i);
-                              }}
-                              className="flex cursor-pointer flex-col items-center mt-3 gap-2"
-                            >
-                              <span className="text-tertiary">
-                                {products[0]?.nestedPlans?.length} More Plans
-                              </span>
-                              <IoIosArrowDown color="#36B37E" />
-                            </div>
-                          )}
-                        </div>
-                        <div className="mobile:mx-auto">
-                          <div className="flex gap-3 items-center">
-                            <h1 className="text-secondary text-2xl font-[600]">
-                              {item.name}
-                            </h1>
-                          </div>
-                          <div className="text-quaternary">
-                            <div className="flex gap-2 items-center mt-2">
-                              <input
-                                className="mobile:hidden"
-                                onChange={(e) => {
-                                  if (selectedPlans?.length > 3) {
-                                    return;
-                                  }
-
-                                  setSelectedPlans((prev: any) => [
-                                    ...prev,
-                                    item.slug,
-                                  ]);
-                                }}
-                                type="checkbox"
-                              />
-                              <input
-                                className="desktop:hidden"
-                                onChange={(e) => {
-                                  if (selectedPlans?.length > 1) {
-                                    return;
-                                  }
-
-                                  setSelectedPlans((prev: any) => [
-                                    ...prev,
-                                    item.slug,
-                                  ]);
-                                }}
-                                type="checkbox"
-                              />
-                              <label>Compare other plans</label>
-                            </div>
-                            <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
-                              {item.features?.map((item2: any, j: number) => (
-                                <div
-                                  key={j}
-                                  className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
-                                >
-                                  <input type="radio" name="features" />
-                                  {item2.name}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mobile:mx-auto">
-                          <div className="flex gap-10">
-                            <div>
-                              <div>Cover amount</div>
-                              <div className="font-[600]">
-                                {item.coverAmount}
-                              </div>
-                            </div>
-                            <div>
-                              <div
-                                onClick={() => setShowHospitals(true)}
-                                className="flex cursor-pointer items-center gap-2"
-                              >
-                                <div>Cashless Hospitals</div>
-                                <IoIosArrowDown />
-                              </div>
-                              <div className="font-[600]">
-                                {item.cashlessHospitals}
-                              </div>
-                            </div>
-                          </div>
-                          <div className="flex justify-center">
-                            <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
-                          </div>
-                          <div className="mt-10 flex flex-col gap-5">
-                            <Link href="/proposer-details">
-                              <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
-                                Rs. {item.monthlyPrice} monthly
-                              </button>
-                            </Link>
-
-                            <div>
-                              <Link href={`/details`}>
-                                <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
-                                  See details
-                                </button>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* {showMorePlans && currentPlanOpenedIndex === i && (
-                    <div className="flex flex-wrap gap-5 ms-5">
-                      {products[currentPlanOpenedIndex]?.nestedPlans?.map(
-                        (item: any, i: number) => (
-                          <div
-                            key={i}
-                            className="flex w-[420px] h-[720px] justify-end flex-col gap-10 bg-white p-8 rounded-xl shadow-md"
-                          >
-                            <div className="mobile:mx-auto">
-                              <div className="flex gap-3 items-center">
-                                <h1 className="text-secondary text-2xl font-[600]">
-                                  {item.name}
-                                </h1>
-                              </div>
-                              <div className="text-quaternary">
-                                <div className="flex gap-2 items-center mt-2">
-                                  <input
-                                    className="mobile:hidden"
-                                    onChange={(e) => {
-                                      if (selectedPlans?.length > 3) {
-                                        return;
-                                      }
-
-                                      setSelectedPlans((prev: any) => [
-                                        ...prev,
-                                        item.slug,
-                                      ]);
-                                    }}
-                                    type="checkbox"
-                                  />
-                                  <input
-                                    className="desktop:hidden"
-                                    onChange={(e) => {
-                                      if (selectedPlans?.length > 1) {
-                                        return;
-                                      }
-
-                                      setSelectedPlans((prev: any) => [
-                                        ...prev,
-                                        item.slug,
-                                      ]);
-                                    }}
-                                    type="checkbox"
-                                  />
-                                  <label>Compare other plans</label>
-                                </div>
-                                <div className="grid grid-cols-2 grid-rows-2 gap-3 mt-5">
-                                  {item.features?.map(
-                                    (item2: any, j: number) => (
-                                      <div
-                                        key={j}
-                                        className="flex mobile:text-xs gap-3 items-center rounded-[6px] border px-3 py-1 border-quaternary"
-                                      >
-                                        <input type="radio" name="features" />
-                                        {item2.name}
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mobile:mx-auto">
-                              <div className="flex gap-10">
-                                <div>
-                                  <div>Cover amount</div>
-                                  <div className="font-[600]">
-                                    {item.coverAmount}
-                                  </div>
-                                </div>
-                                <div>
-                                  <div
-                                    onClick={() => setShowHospitals(true)}
-                                    className="flex cursor-pointer items-center gap-2"
-                                  >
-                                    <div>Cashless Hospitals</div>
-                                    <IoIosArrowDown />
-                                  </div>
-                                  <div className="font-[600]">
-                                    {item.cashlessHospitals}
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex justify-center">
-                                <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
-                              </div>
-                              <div className="mt-10 flex flex-col gap-5">
-                                <Link href="/proposer-details">
-                                  <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
-                                    Rs. {item.monthlyPrice} monthly
-                                  </button>
-                                </Link>
-
-                                <div>
-                                  <Link href={`/details`}>
-                                    <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
-                                      See details
-                                    </button>
-                                  </Link>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  )} */}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>
