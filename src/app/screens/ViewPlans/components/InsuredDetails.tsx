@@ -123,7 +123,7 @@ const InsuredDetails = () => {
   return (
     <div>
       <Container>
-        <div className="flex justify-between py-5 mobile:flex-col gap-2">
+        <div className="flex flex-wrap mobile:justify-between py-5 mobile:flex-col gap-2">
           {details?.map((item, i) => (
             <div key={i}>
               {item.title === "Pin Code" && (

@@ -13,7 +13,7 @@ const DesktopFilters = ({ filters }: { filters: any }) => {
       <DesktopAllFilters filters={filters} />
 
       <Container>
-        <div className="flex flex-wrap justify-between w-full py-7 text-[#2E2E2EA6]">
+        <div className="flex gap-5 flex-wrap justify-between w-full py-7 text-[#2E2E2EA6]">
           {filters?.map((item: any, i: number) => {
             if (item.type === "popup") {
               return (
