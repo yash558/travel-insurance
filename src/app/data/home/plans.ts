@@ -7,7 +7,7 @@ export const products = [
     discount: 5,
     coverAmount: "5 Lakh",
     cashlessHospitals: 292,
-    monthlyPrice: 2378,
+    price: 2378,
     annualPrice: 4378,
     additionalBenifits: [
       {
@@ -48,7 +48,7 @@ export const products = [
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
         annualPrice: 4378,
-        monthlyPrice: 2378,
+        price: 2378,
         policyPeriod: [
           {
             duration: 1,
@@ -203,7 +203,7 @@ export const products = [
         discount: 5,
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
-        monthlyPrice: 2378,
+        price: 2378,
         annualPrice: 4378,
         policyPeriod: [
           {
@@ -359,7 +359,7 @@ export const products = [
         discount: 5,
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
-        monthlyPrice: 2378,
+        price: 2378,
         annualPrice: 4378,
         policyPeriod: [
           {
@@ -544,6 +544,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -551,6 +557,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 200,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -558,6 +570,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -565,6 +583,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -662,7 +686,7 @@ export const products = [
     discount: 5,
     coverAmount: "5 Lakh",
     cashlessHospitals: 292,
-    monthlyPrice: 2378,
+    price: 2378,
     annualPrice: 4378,
     additionalBenifits: [
       {
@@ -703,7 +727,7 @@ export const products = [
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
         annualPrice: 4378,
-        monthlyPrice: 2378,
+        price: 2378,
         policyPeriod: [
           {
             duration: 1,
@@ -858,7 +882,7 @@ export const products = [
         discount: 5,
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
-        monthlyPrice: 2378,
+        price: 2378,
         annualPrice: 4378,
         policyPeriod: [
           {
@@ -1043,6 +1067,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1050,6 +1080,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 200,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1057,6 +1093,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1064,6 +1106,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1161,7 +1209,7 @@ export const products = [
     discount: 5,
     coverAmount: "5 Lakh",
     cashlessHospitals: 292,
-    monthlyPrice: 2378,
+    price: 2378,
     annualPrice: 4378,
     additionalBenifits: [
       {
@@ -1201,7 +1249,7 @@ export const products = [
         discount: 5,
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
-        monthlyPrice: 2378,
+        price: 2378,
         annualPrice: 4378,
         policyPeriod: [
           {
@@ -1386,6 +1434,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1393,6 +1447,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 200,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1400,6 +1460,12 @@ export const products = [
       {
         relationId: 1,
         name: "No Room Rent Limit",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1407,6 +1473,12 @@ export const products = [
       {
         relationId: 2,
         name: "7.5 Lakh No Claim Bonus",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -1504,7 +1576,7 @@ export const products = [
     discount: 5,
     coverAmount: "5 Lakh",
     cashlessHospitals: 292,
-    monthlyPrice: 2378,
+    price: 2378,
     annualPrice: 4378,
     additionalBenifits: [
       {
@@ -1545,7 +1617,7 @@ export const products = [
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
         annualPrice: 4378,
-        monthlyPrice: 2378,
+        price: 2378,
         policyPeriod: [
           {
             duration: 1,
@@ -1700,7 +1772,7 @@ export const products = [
         discount: 5,
         coverAmount: "5 Lakh",
         cashlessHospitals: 292,
-        monthlyPrice: 2378,
+        price: 2378,
         annualPrice: 4378,
         policyPeriod: [
           {
@@ -1884,28 +1956,52 @@ export const products = [
     features: [
       {
         relationId: 1,
-        name: "No Room Rent Limit",
+        name: "Medical Expenses",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
       },
       {
         relationId: 2,
-        name: "7.5 Lakh No Claim Bonus",
+        name: "Medical Expenses",
+        price: 200,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
       },
       {
         relationId: 1,
-        name: "No Room Rent Limit",
+        name: "Medical Expenses",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
       },
       {
         relationId: 2,
-        name: "7.5 Lakh No Claim Bonus",
+        name: "Medical Expenses",
+        price: 100,
+        details: {
+          price: 100000,
+          deductible: 100,
+          desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+        },
         option: {
           content: "Single private a/c room",
         },
@@ -2000,6 +2096,7 @@ export const products = [
 export const compariableData = [
   {
     name: "Medical Expenses",
+
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },

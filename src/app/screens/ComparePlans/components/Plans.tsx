@@ -1,26 +1,25 @@
 import { products } from "@/app/data/home/plans";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 
 const Plans = () => {
-  const router = useRouter();
-
   return (
     <div>
       <div className="mt-10">
-       
         <div className="mt-10 flex flex-col mobile:flex-wrap items-center gap-20">
           <div className="flex items-center justify-center flex-col">
-            <p className="text-[#0A225F] text-lg">Who would you like to insure?</p>
+            <p className="text-[#0A225F] text-lg">
+              Who would you like to insure?
+            </p>
             <div className="flex items-center justify-center bg-[#36B37E] h-[2px] w-[40%]"></div>
-            <h3 className="text-secondary font-[600] md:text-4xl text-center text-2xl">Find top travel insurance plans</h3>
+            <h3 className="text-secondary font-[600] md:text-4xl text-center text-2xl">
+              Find top travel insurance plans
+            </h3>
           </div>
-          <div className="flex flex-wrap mobile:justify-center gap-2 mobile:gap-5">
+          <div className="flex justify-between w-full flex-wrap mobile:justify-center gap-2 mobile:gap-5">
             {products?.map((item, i) => (
               <div
                 key={i}
@@ -36,46 +35,27 @@ const Plans = () => {
                   className="w-[100px] mx-auto h-[100px] object-contain"
                   alt={item.name}
                 />
-                <div className="flex text-[10px] flex-col items-center mt-1 gap-2">
-                  <span className="text-tertiary">13 more plans</span>
-                  <IoIosArrowDown color="#36B37E" />
-                </div>
 
-                <h2 className="text-xl mobile:text-[17px] text-secondary font-[600]">
-                  {item.name}
-                </h2>
-                <span className="text-tertiary mt-2 font-[600] text-xs">
-                  {item.discount}
-                  {`% Direct Discount*`}
-                </span>
-                <div className="flex text-quaternary items-center gap-1 mt-2">
-                  <input type="radio" />
-                  <label className="text-xs">Compare the plans</label>
-                </div>
-                <div className="text-xs text-quaternary flex gap-5 mobile:whitespace-normal whitespace-nowrap mt-2 white">
-                  <div className="flex flex-col">
-                    <span>Cover amount</span>
-                    <span className="text-black mt-1 font-[600]">
-                      {item.coverAmount}
-                    </span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span>Cashless Hospitals</span>
-                    <span className="text-black mt-1 font-[600]">
-                      {item.cashlessHospitals}
-                    </span>
-                  </div>
-                </div>
+                <div className="w-full bg-gray-300 h-[1px]" />
+
+                <h5 className="text-quaternary mt-2 text-center line-through">
+                  Rs. {item.price}
+                </h5>
+                <h4 className="text-lg font-semibold text-center">
+                  Rs.{" "}
+                  {Math.floor(
+                    item.price - (item.discount / 100) * item.discount
+                  )}
+                </h4>
+
                 <div className="mx-auto mt-2 w-full">
                   <Link href="/review-plan">
                     <button className="bg-primary w-full rounded-[6px] py-1 px-4 text-white text-xs font-[600]">
-                      Buy Now
+                      Select
                     </button>
                   </Link>
                 </div>
-                <p className="text-quaternary text-xs mt-2 mx-auto">
-                  Rs. {item.annualPrice}
-                </p>
+                <div className="w-[100px] mx-auto mt-5 bg-gray-300 h-[2px]" />
               </div>
             ))}
             <div className="relative bg-white shadow-md">

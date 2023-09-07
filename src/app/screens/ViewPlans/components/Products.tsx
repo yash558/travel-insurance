@@ -508,7 +508,7 @@ const Products = () => {
                   return (
                     <div key={i} className="flex">
                       <div>
-                        <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
+                        <div className="flex w-[420px] mobile:w-full justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                           {item.nestedPlan ? (
                             <div className="flex h-[149px] mobile:mx-auto flex-col items-center bg-white rounded-[16px]"></div>
                           ) : (
@@ -542,8 +542,8 @@ const Products = () => {
                                   className="flex cursor-pointer flex-col items-center mt-3 gap-2"
                                 >
                                   <span className="text-tertiary">
-                                    {products[0]?.nestedPlans?.length} More
-                                    Plans
+                                    {item?.nestedPlans?.length}&nbsp; More
+                                    Plan(s)
                                   </span>
                                   <IoIosArrowDown color="#36B37E" />
                                 </div>
@@ -634,7 +634,7 @@ const Products = () => {
 
                               <div>
                                 <Link href={`/details`}>
-                                  <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
+                                  <button className="bg-secondary whitespace-nowrap w-full py-1 text-white px-[110px] rounded-[6px]">
                                     See details
                                   </button>
                                 </Link>
@@ -653,7 +653,7 @@ const Products = () => {
                   return (
                     <div key={i} className="flex">
                       <div>
-                        <div className="flex w-[420px] justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
+                        <div className="flex w-[420px] mobile:w-full justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                           <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                             <Image
                               className="object-contain"
@@ -684,7 +684,7 @@ const Products = () => {
                                 className="flex cursor-pointer flex-col items-center mt-3 gap-2"
                               >
                                 <span className="text-tertiary">
-                                  {products[0]?.nestedPlans?.length} More Plans
+                                  {item?.nestedPlans?.length}&nbsp; More Plan(s)
                                 </span>
                                 <IoIosArrowDown color="#36B37E" />
                               </div>
@@ -774,7 +774,7 @@ const Products = () => {
 
                               <div>
                                 <Link href={`/details`}>
-                                  <button className="bg-secondary w-full py-1 text-white px-[110px] rounded-[6px]">
+                                  <button className="bg-secondary whitespace-nowrap w-full py-1 text-white px-[110px] rounded-[6px]">
                                     See details
                                   </button>
                                 </Link>
