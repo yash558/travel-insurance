@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import SumInsured from "./components/SumInsured";
-import EnterValue from "./components/EnterValue";
-import TopUp from "./components/TopUp";
 import { useProfileSetupStateContext } from "../../context/ProfileSetupStateContext";
 import Indicators from "../../shared/Indicators";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import Image from "next/image";
 import ImageSlider from "../../components/ImageSlider";
+
 const Step2 = () => {
   const data = [
     {
@@ -60,13 +57,13 @@ const Step2 = () => {
       </div>
       <Indicators step={2} />
 
-      <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">{`When are you travelling to USA?`}</h5>
+      <h5 className="text-[36px] mobile:text-[22px] text-secondary font-[600]">{`When are you travelling to USA?`}</h5>
       <p className="text-lg mobile:text-[20px]">
         Don&anpos;t worry you can change your trip dates at a later stage.
       </p>
       <div className="w-[131px] mt-5 h-[5px] bg-[#36B37E]"></div>
-      <div className="flex w-full items-center justify-between gap-8">
-        <div className="text-left  my-4 flex flex-col gap-8">
+      <div className="flex w-full flex-wrap items-end justify-between">
+        <div className="text-left w-[50%] mobile:w-full mt-4 flex-col gap-8">
           <div>
             <label
               htmlFor="startDate"
@@ -78,7 +75,7 @@ const Step2 = () => {
               type="date"
               id="startDate"
               name="startDate"
-              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="mobile:w-full w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Enter Your Start Date..."
             />
           </div>
@@ -93,13 +90,14 @@ const Step2 = () => {
               type="date"
               id="endDate"
               name="endDate"
-              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="mobile:w-full w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Enter Your End Date..."
             />
           </div>
         </div>
-        <div className="mt-[-8rem]">
-        <ImageSlider/>
+
+        <div className="w-[50%]">
+          <ImageSlider />
         </div>
       </div>
 

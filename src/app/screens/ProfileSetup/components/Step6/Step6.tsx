@@ -7,7 +7,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 const Step6 = () => {
   return (
     <div>
-      <div className="mb-10 mobile:mb-5">
+      <div className="mb-10 mobile:mb-10">
         <AiOutlineArrowLeft
           className="cursor-pointer"
           color="#0A225F"

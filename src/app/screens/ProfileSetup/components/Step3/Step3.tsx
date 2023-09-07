@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import Indicators from "../../shared/Indicators";
 import ContinueBtn from "../../shared/ContinueBtn";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -24,11 +24,11 @@ const Step3 = () => {
 
   const handleButtonClick = (value: any) => {
     setSelectedValue(value);
-  //   // You can perform any additional actions here based on the selected value.
+    //   // You can perform any additional actions here based on the selected value.
   };
   return (
     <div>
-      <div className="mb-10 mobile:mb-5">
+      <div className="mb-10 mobile:mb-10">
         <AiOutlineArrowLeft
           className="cursor-pointer"
           color="#0A225F"
@@ -42,28 +42,27 @@ const Step3 = () => {
 
       <div className="flex w-full items-center justify-between gap-8">
         <div className="text-left  flex flex-col gap-8">
-        
-        <div className="">
-        <label
+          <div className="">
+            <label
               htmlFor="ageGroup"
               className="block text-xl mt-4 font-medium text-[#0a225f] mb-2"
             >
               Select Number of People:
             </label>
-      {[1, 2, 3, '4+'].map((value) => (
-        <button
-          key={value}
-          className={`w-12 h-12 mr-8 rounded-full border border-gray-300 ${
-            selectedValue === value
-              ? 'bg-gray-800 text-white' // Style for the selected button
-              : 'bg-white text-gray-800 hover:bg-gray-100' // Style for other buttons
-          }`}
-          onClick={() => handleButtonClick(value)}
-        >
-          {value}
-        </button>
-      ))}
-    </div>
+            {[1, 2, 3, "4+"].map((value) => (
+              <button
+                key={value}
+                className={`w-12 h-12 mr-8 rounded-full border border-gray-300 ${
+                  selectedValue === value
+                    ? "bg-gray-800 text-white" // Style for the selected button
+                    : "bg-white text-gray-800 hover:bg-gray-100" // Style for other buttons
+                }`}
+                onClick={() => handleButtonClick(value)}
+              >
+                {value}
+              </button>
+            ))}
+          </div>
           <div>
             <label
               htmlFor="ageGroup"
@@ -74,7 +73,7 @@ const Step3 = () => {
             <select
               id="ageGroup"
               name="ageGroup"
-              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="mobile:w-full bg-white w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               defaultValue="" // Set a default value if needed
             >
               <option value="" disabled>
@@ -95,14 +94,13 @@ const Step3 = () => {
             </label>
             <input
               type="number"
-
-              className="md:w-[500px] w-[350px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+              className="mobile:w-full w-[500px] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
               placeholder="Sum Insured"
             />
           </div>
         </div>
-        <div className="mt-[-5rem]">
-        <ImageSlider/>
+        <div className="w-[50%] mobile:hidden">
+          <ImageSlider />
         </div>
       </div>
 

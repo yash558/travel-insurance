@@ -14,7 +14,7 @@ const Step1 = ({ data }: { data: any }) => {
       name: "USA",
     },
     {
-      name: "United Kingdom",
+      name: "UK",
     },
     {
       name: "Germany",
@@ -32,8 +32,6 @@ const Step1 = ({ data }: { data: any }) => {
       name: "China",
     },
   ];
-
-  let countLeftInsuranceFor = 0;
 
   const { profileSetupStates, setProfileSetupStates } =
     useProfileSetupStateContext();
@@ -64,49 +62,35 @@ const Step1 = ({ data }: { data: any }) => {
     <div>
       <Indicators step={1} />
 
-      <div className="text-left mt-10">
-        <h2 className="text-[40px] mobile:text-[22px] mt-4 mb-4 text-secondary font-[600]">
-          {data?.heading}
-        </h2>
-        <h5 className="text-[24px] mobile:text-[17px] font-[600]">
-          {data?.subHeading}
-        </h5>
-        <div className="w-[200px] mt-3 h-[5px] bg-[#36B37E]" />
-      </div>
+      <div>
+        <div className="text-left mb-3">
+          <h2 className="text-[40px] mobile:text-[22px] mt-4 mb-4 text-secondary font-[600]">
+            {data?.heading}
+          </h2>
+          <h5 className="text-[24px] mobile:text-[17px] font-[600]">
+            {data?.subHeading}
+          </h5>
+          <div className="w-[200px] mt-3 h-[5px] bg-[#36B37E]" />
+        </div>
 
-      <div className="flex justify-left">
-        <div className="">
-          <div className="flex items-center justify-center">
-            <div className="flex justify-left items-start flex-row ">
-              {/* mobile */}
-              {/* <MobileStep1
-              data={data}
-              countLeftInsuranceFor={countLeftInsuranceFor}
-              onChangeHandler={onChangeHandler}
-            /> */}
-              {/* desktop */}
-              {/* <DesktopStep1
-              data={data}
-              countLeftInsuranceFor={countLeftInsuranceFor}
-              onChangeHandler={onChangeHandler}
-            /> */}
-
-              <div>
-                <div className="text-left  my-4">
+        <div>
+          <div>
+            <div className="flex flex-wrap mobile:mt-10 items-end w-full justify-between">
+              <div className="w-[50%] mobile:w-full">
+                <div className="text-left">
                   <input
                     type="text"
-                    className="w-[75%] text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
+                    className="w-[75%] mobile:w-full text-xl p-6 border border-[#0a225f] text-[#0a225f] text-opacity-60 border-opacity-60 rounded-md"
                     placeholder="Enter Your Destination..."
                   />
                   <h1 className="text-black text-3xl text-bold my-4">
-                    Popular destinations{" "}
+                    Popular destinations&nbsp;
                     <span className="text-gray-800 text-xl">
-                      {" "}
-                      ( you can select multiple destinations)
+                      (you can select multiple destinations)
                     </span>
                   </h1>
                 </div>
-                <div className="flex gap-5 mobile:grid mobile:grid-cols-2 mb-10 flex-wrap  mobile:justify-start mobile:gap-5">
+                <div className="flex gap-5 mobile:grid mobile:grid-cols-2 flex-wrap  mobile:justify-start mobile:gap-5">
                   {btns?.map((item, i) => (
                     <div key={i}>
                       {profileSetupStates?.step1States?.selectedBtn === i ? (
@@ -120,7 +104,7 @@ const Step1 = ({ data }: { data: any }) => {
                               },
                             }))
                           }
-                          className="bg-secondary w-[240px] mobile:w-full border-2 border-secondary text-white px-5 py-2 rounded-[45px]"
+                          className="bg-secondary w-[165px] mobile:w-full border-2 border-secondary text-white px-5 py-2 rounded-[45px]"
                         >
                           {item?.name}
                         </button>
@@ -135,7 +119,7 @@ const Step1 = ({ data }: { data: any }) => {
                               },
                             }))
                           }
-                          className="bg-white w-full border-2 border-secondary text-secondary px-5 py-2 rounded-[45px]"
+                          className="bg-white w-[165px] mobile:w-full border-2 border-secondary text-secondary px-5 py-2 rounded-[45px]"
                         >
                           {item?.name}
                         </button>
@@ -144,26 +128,20 @@ const Step1 = ({ data }: { data: any }) => {
                   ))}
                 </div>
               </div>
-              <div className="mt-[-10rem] ">
-                {/* <Image
-                  src="/assets/bg.png"
-                  className="w-[700px] -mt-32 rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:hidden"
-                  width={200}
-                  height={200}
-                  alt="Logo"
-                /> */}
-                <ImageSlider/>
+
+              <div className="w-[50%]">
+                <ImageSlider />
               </div>
             </div>
           </div>
-          <button
-            onClick={() => continueClickHandler()}
-            className="bg-primary w-full mt-10 font-[700] text-white py-4 rounded-[10px]"
-          >
-            Next
-          </button>
         </div>
       </div>
+      <button
+        onClick={() => continueClickHandler()}
+        className="bg-primary w-full mt-10 font-[700] text-white py-4 rounded-[10px]"
+      >
+        Next
+      </button>
       <div className="text-center my-10">
         <p>
           {`By clicking on Continue, you agree to our`}{" "}

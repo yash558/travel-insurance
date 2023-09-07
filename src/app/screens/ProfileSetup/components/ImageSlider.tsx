@@ -1,4 +1,3 @@
-import Container from "@/app/container/Container";
 import Image from "next/image";
 import React from "react";
 import { Autoplay, Navigation, Scrollbar } from "swiper/modules";
@@ -31,87 +30,45 @@ const ImageSlider = () => {
       price: "50",
       relationId: 5,
     },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 6,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 7,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 8,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 9,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 10,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 11,
-    },
-    {
-      img: "/assets/bg.png",
-      price: "50",
-      relationId: 12,
-    },
   ];
 
   return (
-    <div className="mt-10 mobile:hidden">
-      <Container>
-        <div className="w-[600px]">
-          <Swiper
-            modules={[Autoplay, Navigation, Scrollbar]}
-            scrollbar={{ draggable: true }}
-            autoplay={{ pauseOnMouseEnter: true }}
-            breakpoints={{
-              228: {
-                slidesPerView: 1,
-              },
-              348: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 1,
-              },
-              1024: {
-                slidesPerView: 1,
-              },
-            }}
-          >
-            {data?.map((item: any, i: number) => (
-              <SwiperSlide key={i}>
-                <div className=" mx-4">
-                  <div className="">
-                  <Image
-            src={item.img}
-         
-            className="w-[600px] rounded-tl-[200px] rounded-3xl  h-[450px] mobile:w-[70px] mobile:h-[50px]"
-            width={200}
-            height={200}
-            alt="Logo"
-          />
-                 
-                   
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </Container>
+    <div className="mobile:hidden">
+      <div>
+        <Swiper
+          modules={[Autoplay, Navigation, Scrollbar]}
+          scrollbar={{ draggable: true }}
+          autoplay={{ pauseOnMouseEnter: true }}
+          breakpoints={{
+            228: {
+              slidesPerView: 1,
+            },
+            348: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1,
+            },
+            1024: {
+              slidesPerView: 1,
+            },
+          }}
+        >
+          {data?.map((item: any, i: number) => (
+            <SwiperSlide key={i}>
+              <div className="ms-4">
+                <Image
+                  src={item.img}
+                  className="w-[650px] h-[400px] object-cover rounded-tl-[200px] rounded-3xl mobile:w-[70px] mobile:h-[50px]"
+                  width={600}
+                  height={600}
+                  alt="Logo"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
