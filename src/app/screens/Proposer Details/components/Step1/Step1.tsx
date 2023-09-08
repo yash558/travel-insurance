@@ -6,6 +6,22 @@ import Summary from "../Summary";
 
 const Step1 = () => {
   const [activeTab, setActiveTab] = useState<any>(0);
+  const [selectedBtn, setSelectedBtn] = useState<number>();
+
+  const data = [
+    {
+      insurer: "Pass 1",
+    },
+    {
+      insurer: "Pass 2",
+    },
+    {
+      insurer: "Pass 3",
+    },
+    {
+      insurer: "Pass 4",
+    },
+  ];
 
   return (
     <div>
@@ -13,24 +29,20 @@ const Step1 = () => {
         <Indicators step={1} />
       </div>
       <div>
+        <div className="flex mt-10 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
+          {data?.map((item: any, i: number) => (
+            <button
+              onClick={() => setSelectedBtn(i)}
+              className={`border-2 ${
+                selectedBtn === i && "bg-secondary text-white"
+              } text-left mobile:w-full text-secondary w-full py-2 px-3 border-secondary rounded-[6px]`}
+              key={i}
+            >
+              {item.insurer}
+            </button>
+          ))}
+        </div>
         <div className="flex  gap-10 mobile:flex-wrap-reverse justify-between">
-          {/* <div className="flex flex-col justify-center mobile:w-full mobile:flex-row font-[600] gap-5 mt-10 p-[50px] ps-0 mobile:p-5 bg-secondary rounded-[35px] mobile:rounded-none rounded-s-none">
-            {proposerData?.tabs?.map((item, i) => (
-              <div
-                onClick={() => setActiveTab(i)}
-                key={i}
-                className={`flex cursor-pointer w-[200px] ${
-                  activeTab === i
-                    ? "bg-white text-secondary rounded-[35px] mobile:rounded-[35px] rounded-s-none"
-                    : "bg-secondary text-white"
-                }`}
-              >
-                <div className="text-xl mobile:text-xs rounded-[8px] px-5 py-2">
-                  {item.tab}
-                </div>
-              </div>
-            ))}
-          </div> */}
           <div className="mobile:mt-5 mt-10">
             <div>
               <h1 className="text-3xl text-secondary font-[600]">
@@ -92,6 +104,11 @@ const Step1 = () => {
                     </span>
                   </div>
                 ))}
+                <div className="my-auto mobile:mx-auto w-full">
+                  <button className="bg-primary py-[22px] w-full font-[700] text-white rounded-[10px]">
+                    + Add a traveller
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -133,7 +150,7 @@ const Step1 = () => {
                           </button>
                         ))}
                       </div>
-                      <div className="grid mobile:flex mobile:flex-wrap  grid-cols-2 grid-rows-2 gap-2 mobile:gap-5 mt-5">
+                      {/* <div className="grid mobile:flex mobile:flex-wrap  grid-cols-2 grid-rows-2 gap-2 mobile:gap-5 mt-5">
                         {proposerData?.tabs[activeTab]?.fields?.map(
                           (item, i) => (
                             <div key={i} className="mobile:w-full">
@@ -176,17 +193,13 @@ const Step1 = () => {
                             </div>
                           )
                         )}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
               )}
             </div>
           ))}
-
-          <div className="mobile:hidden">
-            {/* <Summary /> */}
-          </div>
         </div>
       </div>
       <ContinueBtn />

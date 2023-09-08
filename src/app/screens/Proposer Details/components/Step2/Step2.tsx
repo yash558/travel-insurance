@@ -6,12 +6,11 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { useProfileSetupStateContext } from "@/app/screens/ProfileSetup/context/ProfileSetupStateContext";
 import Summary from "../Summary";
-import CheckBox from "../CheckBox"
+import CheckBox from "../CheckBox";
 
 const Step2 = () => {
-  
-  
-  const { profileSetupStates, setProfileSetupStates } = useProfileSetupStateContext();
+  const { profileSetupStates, setProfileSetupStates } =
+    useProfileSetupStateContext();
 
   const BackClickHandler = () => {
     setProfileSetupStates((prevStates: any) => ({
@@ -22,68 +21,26 @@ const Step2 = () => {
     }));
   };
 
-  
-  
-  const [toggleSelected, setToggleSelected] = useState(false);
-  const [toggledIndex, setToggledIndex] = useState<any>(null);
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedBtn, setSelectedBtn] = useState<number>();
 
-  const qualificationData = ["X Pass", "XII Pass", "Graduate", "Post Graduate"];
-  const questions = [
+  const data = [
     {
-      id: 'declinedInsurance',
-      text:
-        'Has any proposal for insurance on the life of the applicant ever been declined, postponed, loaded, or subjected to any special conditions such as exclusions by any insurance company?',
+      insurer: "Pass 1",
     },
     {
-      id: 'politicallyExposed',
-      text: 'Are you a politically exposed person (PEP) or a close relative of PEP?',
+      insurer: "Pass 2",
     },
     {
-      id: 'hospitalized',
-      text:
-        'Other than common cold, flu, infections, minor injury, or other minor ailments; have you ever been hospitalized for more than 5 days, undergone/advised to undergo any surgical procedures, or taken any medication/had any symptoms for more than 14 days? Medication is including but not limited to inhalers, injections, oral drugs, and topical applications.',
+      insurer: "Pass 3",
     },
     {
-      id: 'adverseFindings',
-      text:
-        'Have you ever had adverse findings to any diagnostic tests or investigations such as Thyroid Profile, Lipid Profile, Treadmill test, Angiography, Echocardiography, Endoscopy, Ultrasound, CT Scan, MRI, Biopsy, and FNAC?',
-    },
-    {
-      id: 'diabetes',
-      text: 'Do you have diabetes?',
-    },
-    {
-      id: 'highBloodPressure',
-      text: 'Do you have high blood pressure?',
-    },
-    {
-      id: 'geneticDisorder',
-      text: 'Have you ever been diagnosed or treated for any genetic/hereditary disorders or HIV/AIDS?',
-    },
-    {
-      id: 'mentalDisorder',
-      text: 'Have you ever been diagnosed or treated for any mental/psychiatric disorders?',
-    },
-    {
-      id: 'smoke',
-      text: 'Does any of the applicants Smoke Cigarettes/Bidi/Cigar?',
-    },
-    {
-      id: 'alcohol',
-      text: 'Does any of the applicants take alcohol?',
-    },
-    {
-      id: 'chewTobacco',
-      text: 'Does any of the applicants Chew tobacco/Gutkha/Pan Masala?',
+      insurer: "Pass 4",
     },
   ];
 
-
-
-
-
- 
+  const [toggleSelected, setToggleSelected] = useState(false);
+  const [toggledIndex, setToggledIndex] = useState<any>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div className="">
@@ -95,90 +52,73 @@ const Step2 = () => {
           onClick={BackClickHandler}
         />
       </div>
-      <div className="py-5">
+      <div className="pb-3">
         <Indicators step={2} />
       </div>
-      {/* <div className="flex mobile:grid mobile:grid-cols-2 gap-10 mt-10 mobile:gap-5">
-        {proposerData.tabs[0]?.btns?.map((item, i) => (
+
+      <div className="flex my-10 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
+        {data?.map((item: any, i: number) => (
           <button
-            className="w-full text-left ps-2 rounded-[8px] py-2 border-2 border-secondary"
+            onClick={() => setSelectedBtn(i)}
+            className={`border-2 ${
+              selectedBtn === i && "bg-secondary text-white"
+            } text-left mobile:w-full text-secondary w-full py-2 px-3 border-secondary rounded-[6px]`}
             key={i}
           >
-            {item}
+            {item.insurer}
           </button>
         ))}
-      </div> */}
-      <div className="min-h-screen md:p-8 p-2">
-      <h1 className="text-[#0A225F] font-bold md:text-4xl text-2xl">Help us know the medical condition, if any</h1>
-      <h1 className="text-[#0A225F] text-xl">We’ll only ask for the details insurance companies need</h1>
-      <div>
-        {questions.map((question: any, index: number) => (
-          <div key={question.id} className="flex md:flex-row flex-col justify-between items-center my-4">
-            <div className="md:w-[60%] w-[90%] flex gap-4">
-              <h1>{index + 1}</h1>
-              <label className="">{question.text}</label>
-            </div>
+      </div>
 
-           
-            <div className="flex items-center justify-center text-center   space-x-4">
+      <div className="flex items-center gap-10 justify-between">
+        <div className="w-[60%] mobile:w-full">
+          <h1 className="text-secondary text-3xl font-semibold">
+            Medical History
+          </h1>
+          <p className="text-secondary">
+            Does any of the traveller(s) have pre-existing medical conditions?
+            Select YES if any of the traveller(s) have health issues for which
+            they need to take regular medication as part of the long-term
+            treatment.
+          </p>
 
-              <button
-                className="bg-[#0A225F] flex items-center justify-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => {
-                  // Handle "Yes" button click here
-                }}
-              >
-                Yes
-              </button>
-              <button
-                className="border-2 border-[#0A225F] text-[#0A225F] flex items-center font-bold py-2 px-4 rounded"
-                onClick={() => {
-                  // Handle "No" button click here
-                }}
-              >
-                No
-              </button>
-
-
-            </div>
-            </div>
-          
-        ))}
-        <div className="my-4">
-
-          <div className="mt-10 justify-between flex mobile:flex-col gap-5 my-4">
-            <div className="flex items-center gap-5">
-              <div>
-                <span>12  </span>&nbsp;<span>Qualification</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-5">
-              <div className="relative w-full">
-                <button
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="border-[2px] flex justify-end w-[200px] mobile:w-full gap-20 items-center border-secondary rounded-[4px] py-2 px-4"
-                >
-                  <IoIosArrowDown />
-                </button>
-                {showDropdown && (
-                  <div className="absolute border-2 border-secondary border-t-0 rounded-b-md bg-white flex flex-col gap-2 px-4 py-2 w-full">
-                    {qualificationData?.map((item, i) => (
-                      <div key={i} className="flex items-center gap-1">
-                        <input type="checkbox" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+          <div className="flex gap-5 mt-5 mobile:justify-center">
+            <span className="text-white border-2 border-secondary bg-secondary px-4 py-2 rounded-md">
+              Yes
+            </span>
+            <span className="text-secondary border-2 border-secondary bg-white px-4 py-2 rounded-md">
+              No
+            </span>
           </div>
 
-
-          
+          <div className="mt-5 mobile:flex mobile:flex-col mobile:gap-2">
+            <div className="flex items-center gap-2">
+              <input type="checkbox" />
+              <p className="text-quaternary">
+                I declare that nominee is of 18 years of age
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <input type="checkbox" />
+              <p className="text-quaternary">
+                I hereby declare that information provided above is true, and I
+                accept all <a href="#">Terms & Conditions</a>
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <input type="checkbox" />
+              <p className="text-quaternary">
+                I hereby consent to receive information from Central KYC
+                Registry through SMS/email on the...Read More
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="mobile:hidden">
+          <Summary />
         </div>
       </div>
-    </div>
+
       <ContinueBtn />
     </div>
   );
