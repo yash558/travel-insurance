@@ -64,7 +64,7 @@ const Step2 = () => {
       <div className="w-[131px] mt-5 h-[5px] bg-[#36B37E]"></div>
       <div className="flex mt-[-15px] w-full flex-wrap items-end justify-between">
         <div className="text-left w-[50%] mobile:w-full mt-4 flex-col gap-8">
-          <div>
+          <div className="mobile:mt-10">
             <label
               htmlFor="startDate"
               className="block text-xl font-medium text-[#0a225f] mb-2"
