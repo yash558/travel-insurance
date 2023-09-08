@@ -29,7 +29,7 @@ const Step1 = () => {
         <Indicators step={1} />
       </div>
       <div>
-        <div className="flex mt-10 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
+        <div className="flex mt-10 mobile:mt-5 mobile:mb-5 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
           {data?.map((item: any, i: number) => (
             <button
               onClick={() => setSelectedBtn(i)}
