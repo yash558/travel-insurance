@@ -2096,32 +2096,61 @@ export const products = [
 export const compariableData = [
   {
     name: "Medical Expenses",
-
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
     name: "Emergency Care",
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
     name: "Third party travel cost",
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
     name: "Early Return",
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
     name: "Flight Delay",
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
   },
   {
     name: "Legal Assistance",
+    details: {
+      price: 100000,
+      deductible: 100,
+      desc: "Covers unplanned and emergency medical expenses for the treatment of any illness or injuries that can occur while travelling abroad",
+    },
     desc: `Claim Settlement Ratio
     This is explained as (Number of Claims Settled / Number of Claims) by the Insurance Company.`,
     buyNowBtn: true,

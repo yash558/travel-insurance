@@ -2,9 +2,9 @@ import Container from "@/app/container/Container";
 import React, { useState } from "react";
 import Plans from "./components/Plans";
 import { compariableData, products } from "@/app/data/home/plans";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const ComparePlans = () => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState<any>(null);
   const [currentDetails, setCurrentDetails] = useState<any>(null);
 
   return (
@@ -12,7 +12,7 @@ const ComparePlans = () => {
       <Container>
         <Plans />
 
-        {products?.map((item3: any, k: any) => (
+        {compariableData?.map((item3: any, k: any) => (
           <div key={k}>
             <div className="bg-quaternary my-[25px] h-[1px] w-full opacity-25" />
             <div>
@@ -20,23 +20,41 @@ const ComparePlans = () => {
                 <div className="flex items-center mobile:flex-wrap gap-[60px] mobile:gap-5 w-full">
                   <div
                     onClick={() => {
-                      setShowDetails(true);
+                      if (showDetails && currentDetails === k) {
+                        return setShowDetails(null);
+                      }
+                      setShowDetails(item3.details);
                       setCurrentDetails(k);
                     }}
                     className="w-[290px] cursor-pointer justify-between mobile:w-full flex items-center gap-10"
                   >
                     <h3 className="text-secondary font-[600]">{item3.name}</h3>
-                    <IoIosArrowDown />
+                    {showDetails && currentDetails === k ? (
+                      <IoIosArrowUp />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
                   </div>
-                  <div className="flex justify-between w-full">
+                  <div className="desktop:hidden">
+                    {showDetails && currentDetails === k && (
+                      <div className="flex flex-col gap-2">
+                        <span className="text-quaternary font-semibold">
+                          ${showDetails?.price} Deductible: $
+                          {showDetails.deductible}
+                        </span>
+                        <span className="text-quaternary">
+                          {showDetails.desc}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap mobile:grid mobile:grid-cols-2 gap-5 justify-between w-full">
                     {products?.map((item, i) => (
                       <div key={i}>
                         <div>
                           {item.slug === "care-supreme-direct" && (
-                            <div className="md:flex md:flex-wrap   grid grid-cols-3 gap-10 mobile:gap-2">
-                              <div className="bg-white shadow-md w-[200px] text-center font-semibold px-5 py-3 rounded-md">
-                                Rs. {item.price}
-                              </div>
+                            <div className="bg-white shadow-md w-[200px] mobile:w-full text-center font-semibold px-5 py-3 rounded-md">
+                              Rs. {item.price}
                             </div>
                           )}
                         </div>
@@ -46,7 +64,16 @@ const ComparePlans = () => {
                 </div>
               </div>
             </div>
-            {showDetails && showDetails === k && <div>{}</div>}
+            <div className="mobile:hidden">
+              {showDetails && currentDetails === k && (
+                <div className="flex flex-col gap-2">
+                  <span className="text-quaternary font-semibold">
+                    ${showDetails?.price} Deductible: ${showDetails.deductible}
+                  </span>
+                  <span className="text-quaternary">{showDetails.desc}</span>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </Container>
