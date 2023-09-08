@@ -16,6 +16,24 @@ const Step4 = () => {
       },
     }));
   };
+
+  const [selectedBtn, setSelectedBtn] = React.useState<number>();
+
+  const data = [
+    {
+      insurer: "Pass 1",
+    },
+    {
+      insurer: "Pass 2",
+    },
+    {
+      insurer: "Pass 3",
+    },
+    {
+      insurer: "Pass 4",
+    },
+  ];
+
   return (
     <div>
       <div className="mb-10 mobile:mb-10">
@@ -27,6 +45,21 @@ const Step4 = () => {
         />
       </div>
       <Indicators step={4} />
+
+      <div className="flex mb-10 mobile:mb-0 mobile:mt-[28px] mt-20 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
+        {data?.map((item: any, i: number) => (
+          <button
+            onClick={() => setSelectedBtn(i)}
+            className={`border-2 ${
+              selectedBtn === i && "bg-secondary text-white"
+            } text-left mobile:w-full text-secondary w-full py-2 px-3 border-secondary rounded-[6px]`}
+            key={i}
+          >
+            {item.insurer}
+          </button>
+        ))}
+      </div>
+
       <div className="flex justify-between pt-10 mobile:pt-0">
         <div>
           <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">
