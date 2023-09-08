@@ -22,7 +22,7 @@ const MobileFilters = ({ filters }: { filters: any }) => {
       {homeStates.filterStates.showAllFilters && (
         <MobileAllFilters filters={filters} />
       )}
-      <div className={`bottom-[80px] z-20 right-5 fixed`}>
+      <div className={`bottom-[80px] z-[0] right-5 fixed`}>
         <div
           onClick={() => setOpenFilter(!openFilter)}
           className="rounded-full border-2 border-white drop-shadow-md flex items-center justify-center w-[45px] h-[45px] bg-secondary"
