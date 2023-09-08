@@ -155,30 +155,6 @@ const Products = () => {
 
   const [plans, setPlans] = useState<any>([]);
 
-  /* useEffect(() => {
-    if (!showMorePlans) {
-      return;
-    }
-
-    let finalArray: any = [];
-
-    products?.forEach((item, i) => {
-      if (currentPlanOpenedIndex === i) {
-        finalArray.push(item);
-
-        if (item.nestedPlans) {
-          item.nestedPlans.forEach((nestedPlanItem) => {
-            finalArray.push({ ...nestedPlanItem, nestedPlan: true });
-          });
-        }
-      } else {
-        finalArray.push(item);
-      }
-    });
-
-    setPlans(finalArray);
-  }, [showMorePlans, currentPlanOpenedIndex]); */
-
   let finalArray: any = [];
 
   products?.forEach((item, i) => {
@@ -451,7 +427,7 @@ const Products = () => {
               </div>
               <div className="mt-10 overflow-x-auto h-[300px] overflow-y-auto">
                 <table
-                  cellPadding={15}
+                  cellPadding={10}
                   className="w-full whitespace-nowrap bg-[#f6f6f6] rounded-[12px]"
                 >
                   <thead className="rounded-[8px] bg-secondary p-2 font-[600] text-white">
