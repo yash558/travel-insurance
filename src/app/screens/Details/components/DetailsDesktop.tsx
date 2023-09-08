@@ -71,12 +71,12 @@ const DetailsDesktop = () => {
             </Link>
           </div>
           <div className="flex gap-10 mobile:flex-wrap ">
-            <div className="flex flex-col justify-center pr-2 md:h-[500px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-1 md:pr-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
+            <div className="flex flex-col justify-center pr-2 h-full py-[90px] mobile:w-full mobile:flex-row font-[600] md:gap-5 gap-2 md:mt-1 md:pr-[50px] ps-0 mobile:p-5 md:bg-secondary bg-white rounded-[35px] mobile:rounded-none rounded-s-none">
               {proposerDataone?.tabs?.map((item, i) => (
                 <div
                   onClick={() => setActiveTab(i)}
                   key={i}
-                  className={`flex cursor-pointer  md:w-[300px] w-[200] ${
+                  className={`flex cursor-pointer w-[300px] ${
                     activeTab === i
                       ? "text-white bg-secondary md:bg-white md:text-secondary rounded-r-[35px] "
                       : "text-secondary border border-secondary md:bg-secondary md:text-white bg-white"
