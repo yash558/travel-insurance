@@ -65,8 +65,7 @@ const Step4 = () => {
       <div className="flex justify-between pt-3 mobile:pt-0">
         <div>
           <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">
-            Does the traveller have any pre-existing{" "}
-            <br className="md:flex hidden" /> medical condition?
+            Does the traveller have any pre-existing medical condition?
           </h5>
           <p className="text-[20px] mobile:text-[20px]">
             If the traveller have a known illness, injury or health condition{" "}
