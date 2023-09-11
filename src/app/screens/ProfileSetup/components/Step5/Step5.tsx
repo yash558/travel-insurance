@@ -36,7 +36,7 @@ const Step5 = () => {
         />
       </div>
       <Indicators step={5} />
-      <div className="flex justify-between">
+      <div className="flex items-center mt-[100px] mobile:mt-0 justify-between">
         <div>
           <h5 className="text-[36px] mobile:text-[22px] mt-10 mb-4 text-secondary font-[600]">{`Great! One last step to get your travel insurance plans`}</h5>
           <p className="text-[20px] mobile:text-[20px]">

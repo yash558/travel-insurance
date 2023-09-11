@@ -21,16 +21,16 @@ const Step4 = () => {
 
   const data = [
     {
-      insurer: "Pass 1",
+      insurer: 1,
     },
     {
-      insurer: "Pass 2",
+      insurer: 2,
     },
     {
-      insurer: "Pass 3",
+      insurer: 3,
     },
     {
-      insurer: "Pass 4",
+      insurer: 4,
     },
   ];
 
@@ -46,21 +46,23 @@ const Step4 = () => {
       </div>
       <Indicators step={4} />
 
-      <div className="flex mb-10 mobile:mb-0 mobile:mt-[28px] mt-20 items-center mobile:grid mobile:grid-cols-2 gap-10 mobile:gap-5">
+      <div className="mt-[100px] mobile:mt-[70px]">
         {data?.map((item: any, i: number) => (
           <button
-            onClick={() => setSelectedBtn(i)}
-            className={`border-2 ${
-              selectedBtn === i && "bg-secondary text-white"
-            } text-left mobile:w-full text-secondary w-full py-2 px-3 border-secondary rounded-[6px]`}
             key={i}
+            className={`w-12 h-12 mr-8 rounded-full border border-gray-300 ${
+              selectedBtn === i
+                ? "bg-secondary text-white" // Style for the selected button
+                : "bg-white text-gray-800 hover:bg-gray-100" // Style for other buttons
+            }`}
+            onClick={() => setSelectedBtn(i)}
           >
             {item.insurer}
           </button>
         ))}
       </div>
 
-      <div className="flex justify-between pt-10 mobile:pt-0">
+      <div className="flex justify-between pt-3 mobile:pt-0">
         <div>
           <h5 className="text-[36px] mobile:text-[22px] mt-10  text-secondary font-[600]">
             Does the traveller have any pre-existing{" "}
@@ -72,11 +74,11 @@ const Step4 = () => {
             cancer etc which will help us cover you
           </p>
           <div className="w-[131px] mt-3 h-[5px] bg-[#36B37E]"></div>
-          <div className="flex gap-5 mt-10 justify-center">
-            <span className="text-white cursor-pointer bg-secondary px-4 py-2 rounded-md">
+          <div className="flex gap-5 mt-10">
+            <span className="text-white border-2 border-secondary my-auto text-center cursor-pointer w-[100px] bg-secondary px-4 py-2 rounded-md">
               Yes
             </span>
-            <span className="text-secondary cursor-pointer bg-white border-2 border-secondary px-4 py-2 rounded-md">
+            <span className="text-secondary my-auto text-center cursor-pointer w-[100px] bg-white border-2 border-secondary px-4 py-2 rounded-md">
               No
             </span>
           </div>

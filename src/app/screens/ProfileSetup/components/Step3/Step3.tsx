@@ -54,7 +54,7 @@ const Step3 = () => {
                 key={value}
                 className={`w-12 h-12 mr-8 rounded-full border border-gray-300 ${
                   selectedValue === value
-                    ? "bg-gray-800 text-white" // Style for the selected button
+                    ? "bg-secondary text-white" // Style for the selected button
                     : "bg-white text-gray-800 hover:bg-gray-100" // Style for other buttons
                 }`}
                 onClick={() => handleButtonClick(value)}

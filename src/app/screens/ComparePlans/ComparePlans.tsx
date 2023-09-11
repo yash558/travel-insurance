@@ -64,7 +64,7 @@ const ComparePlans = () => {
                 </div>
               </div>
             </div>
-            <div className="mobile:hidden">
+            <div className="mobile:hidden mobile:w-full w-[280px]">
               {showDetails && currentDetails === k && (
                 <div className="flex flex-col gap-2">
                   <span className="text-quaternary font-semibold">

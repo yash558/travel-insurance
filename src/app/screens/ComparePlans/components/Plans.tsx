@@ -19,57 +19,66 @@ const Plans = () => {
               Find top travel insurance plans
             </h3>
           </div>
-          <div className="flex justify-between w-full flex-wrap mobile:justify-center gap-2 mobile:gap-5">
-            {products?.map((item, i) => (
-              <div
-                key={i}
-                className="flex bg-white shadow-md md:w-[250px] p-5 flex-col"
-              >
-                <div className="flex justify-end">
-                  <RxCross1 className="cursor-pointer" />
+          <div className="flex justify-end w-full">
+            <div className="flex w-[66vw] mobile:w-full justify-between flex-wrap mobile:grid mobile:grid-cols-2 gap-2 mobile:gap-5">
+              {products?.map((item, i) => {
+                if (i === 0) {
+                  return;
+                }
+
+                return (
+                  <div
+                    key={i}
+                    className="flex bg-white shadow-md w-[235px] mobile:w-full p-5 flex-col"
+                  >
+                    <div className="flex justify-end">
+                      <RxCross1 className="cursor-pointer" />
+                    </div>
+                    <Image
+                      src={item.img}
+                      width={500}
+                      height={500}
+                      className="w-[100px] mx-auto h-[100px] object-contain"
+                      alt={item.name}
+                    />
+
+                    <div className="w-full bg-gray-300 h-[1px]" />
+
+                    <h5 className="text-quaternary mt-2 text-center line-through">
+                      Rs. {item.price}
+                    </h5>
+                    <h4 className="text-lg font-semibold text-center">
+                      Rs.{" "}
+                      {Math.floor(
+                        item.price - (item.discount / 100) * item.discount
+                      )}
+                    </h4>
+
+                    <div className="mx-auto mt-2 w-full">
+                      <Link href="/review-plan">
+                        <button className="bg-primary w-full rounded-[6px] py-1 px-4 text-white text-xs font-[600]">
+                          Select
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="w-[100px] mx-auto mt-5 bg-gray-300 h-[2px]" />
+                  </div>
+                );
+              })}
+              <div className="relative w-[235px] mobile:w-full bg-white shadow-md">
+                <div className="absolute desktop:hidden right-0 p-3 flex">
+                  <AiOutlineArrowRight size={20} />
                 </div>
-                <Image
-                  src={item.img}
-                  width={500}
-                  height={500}
-                  className="w-[100px] mx-auto h-[100px] object-contain"
-                  alt={item.name}
-                />
 
-                <div className="w-full bg-gray-300 h-[1px]" />
+                <div className="flex h-full cursor-pointer justify-center items-center gap-5 mobile:w-full p-5 flex-col">
+                  <div className="w-[100px] h-[100px] rounded-full border-2 flex items-center justify-center border-primary">
+                    <span className="text-7xl text-primary mt-[-5px]">+</span>
+                  </div>
 
-                <h5 className="text-quaternary mt-2 text-center line-through">
-                  Rs. {item.price}
-                </h5>
-                <h4 className="text-lg font-semibold text-center">
-                  Rs.{" "}
-                  {Math.floor(
-                    item.price - (item.discount / 100) * item.discount
-                  )}
-                </h4>
-
-                <div className="mx-auto mt-2 w-full">
-                  <Link href="/review-plan">
-                    <button className="bg-primary w-full rounded-[6px] py-1 px-4 text-white text-xs font-[600]">
-                      Select
-                    </button>
-                  </Link>
+                  <span className="text-secondary text-center font-[600]">
+                    Add plan to compare
+                  </span>
                 </div>
-                <div className="w-[100px] mx-auto mt-5 bg-gray-300 h-[2px]" />
-              </div>
-            ))}
-            <div className="relative bg-white shadow-md">
-              <div className="absolute desktop:hidden right-0 p-3 flex">
-                <AiOutlineArrowRight size={20} />
-              </div>
-              <div className="flex h-full cursor-pointer justify-center items-center gap-5 w-[250px] mobile:w-[165px] p-5 flex-col">
-                <div className="w-[100px] h-[100px] rounded-full border-2 flex items-center justify-center border-primary">
-                  <span className="text-7xl text-primary mt-[-5px]">+</span>
-                </div>
-
-                <span className="text-secondary text-center font-[600]">
-                  Add plan to compare
-                </span>
               </div>
             </div>
           </div>
