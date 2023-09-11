@@ -59,11 +59,9 @@ const Faaq: React.FC = () => {
 
   return (
     <>
-      <div className="h-full m-4">
-        <div className=" mx-auto w-full  max-w-7xl">
-
-
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
+      <div>
+        <div className="w-full">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
             {data.map((item, index) => (
               <FaqCard
                 key={index}

@@ -50,7 +50,7 @@ const DetailsDesktop = () => {
     deductible,
   }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg p-6">
+      <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">{title}</h2>
         <div className="mb-4">
           <span className="font-semibold"></span> {totalExpenses}
@@ -106,7 +106,7 @@ const DetailsDesktop = () => {
                 </div>
 
                 {activeTab === 0 && (
-                  <div className=" flex gap-10 md:mr-8 flex-wrap items-center md:justify-start justify-center">
+                  <div className="flex flex-wrap gap-5">
                     {data.map((item, index) => (
                       <MedicalExpensesCard
                         key={index} // Add a unique key when rendering in a list
