@@ -12,8 +12,8 @@ const MobileAllFilters = ({ filters }: { filters: any }) => {
   return (
     <div>
       <div className="shadow-md flex justify-center items-center bg-white top-0 overflow-y-auto fixed inset-0 w-full z-[20]">
-        <div className="mt-auto py-10">
-          <div className="flex px-5 items-center py-[50px] justify-between">
+        <div className="my-auto">
+          <div className="flex px-5 items-center py-[35px] justify-between">
             <h3 className="text-secondary mx-auto text-2xl font-[800] text-center">
               Filter plans by
             </h3>
@@ -31,7 +31,7 @@ const MobileAllFilters = ({ filters }: { filters: any }) => {
               }
             />
           </div>
-          <div className="flex h-screen w-full flex-wrap items-center gap-10">
+          <div className="flex w-full flex-wrap items-center gap-10">
             <div className="bg-secondary flex flex-wrap text-white py-5 px-1 w-full">
               {filters?.map((item: any, i: number) => (
                 <div
@@ -82,7 +82,7 @@ const MobileAllFilters = ({ filters }: { filters: any }) => {
                     </div>
                   ))}
               </div>
-              <div className="mt-5 flex justify-center gap-10">
+              <div className="my-5 flex justify-center gap-10">
                 <button className="text-primary px-10 py-1 font-[600]">
                   Reset
                 </button>
