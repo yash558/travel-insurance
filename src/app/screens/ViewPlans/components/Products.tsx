@@ -454,7 +454,7 @@ const Products = () => {
       )}
 
       <Container>
-        <div className="flex items-center">
+        <div className="flex items-center mobile:mt-[-50px]">
           <div className="flex flex-col gap-10 w-full">
             <span className="flex justify-end">
               <span
