@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import Indicators from "../../shared/Indicators";
-import Image from "next/image";
-import { proposerData } from "../../data/data";
-import { products } from "@/app/data/home/plans";
 import Link from "next/link";
-import Summary from "../Summary";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Step3 = () => {
   const [showDeclarationModal, setShowDeclarationModal] = useState(false);
+  const [selectedBtn, setSelectedBtn] = useState<number>();
 
-  
+  const data = [
+    {
+      insurer: 1,
+    },
+    {
+      insurer: 2,
+    },
+    {
+      insurer: 3,
+    },
+    {
+      insurer: 4,
+    },
+  ];
 
   return (
     <div>
@@ -56,6 +66,21 @@ const Step3 = () => {
       </div>
       <div className="py-5">
         <Indicators step={3} />
+        <div className="mt-[50px]">
+          {data?.map((item: any, i: number) => (
+            <button
+              key={i}
+              className={`w-12 h-12 mr-8 rounded-full border border-gray-300 ${
+                selectedBtn === i
+                  ? "bg-secondary text-white" // Style for the selected button
+                  : "bg-white text-gray-800 hover:bg-gray-100" // Style for other buttons
+              }`}
+              onClick={() => setSelectedBtn(i)}
+            >
+              {item.insurer}
+            </button>
+          ))}
+        </div>
         <div className="mt-10 mobile:flex-wrap flex items-center justify-between">
           <div>
             <h1 className="text-secondary text-2xl font-[600]">
@@ -89,9 +114,9 @@ const Step3 = () => {
               />
             </div>
           </div>
-          <div className="mobile:hidden">
+          {/*   <div className="mobile:hidden">
             <Summary />
-          </div>
+          </div> */}
         </div>
         <button
           onClick={() => setShowDeclarationModal(true)}

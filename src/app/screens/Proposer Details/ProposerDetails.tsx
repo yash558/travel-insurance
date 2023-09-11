@@ -16,7 +16,7 @@ const ProfileSetup = () => {
 
   return (
     <div className="my-10">
-      <div
+      {/* <div
         className={`transform overflow-y-auto h-screen fixed w-[75%] z-20 left-0 top-0 ease-in-out shadow-md transition duration-300 bg-white ${
           showSummary ? "translate-x-0" : "translate-x-[-100%]"
         }`}
@@ -33,7 +33,7 @@ const ProfileSetup = () => {
             <GrNotes color="white" size={25} />
           </div>
         </div>
-      </div>
+      </div> */}
       <Container>
         {currentStep === 1 && <Step1 />}
         {currentStep === 2 && <Step2 />}
