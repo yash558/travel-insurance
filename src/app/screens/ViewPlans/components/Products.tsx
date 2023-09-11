@@ -486,7 +486,15 @@ const Products = () => {
                       <div>
                         <div className="flex w-[420px] mobile:w-full justify-between flex-col gap-10 bg-white p-8 rounded-xl shadow-md">
                           {item.nestedPlan ? (
-                            <div className="flex h-[149px] mobile:mx-auto flex-col items-center bg-white rounded-[16px]"></div>
+                            <div className="flex h-[149px] mobile:mx-auto flex-col items-center bg-white rounded-[16px]">
+                              <Image
+                                className="object-contain"
+                                src={item.img}
+                                width={150}
+                                height={150}
+                                alt={item.name}
+                              />
+                            </div>
                           ) : (
                             <div className="flex mobile:mx-auto flex-col items-center bg-white h-full rounded-[16px]">
                               <Image
