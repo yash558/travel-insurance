@@ -585,7 +585,7 @@ const Products = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="mobile:mx-auto">
+                          <div className="mobile:mx-auto my-[-10px]">
                             <div className="flex gap-10">
                               <div>
                                 <div>Cover amount</div>
@@ -607,9 +607,9 @@ const Products = () => {
                               </div>
                             </div>
                             <div className="flex justify-center">
-                              <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
+                              <div className="w-[200px] mt-5 bg-opacity-30 h-[2px] bg-quaternary" />
                             </div>
-                            <div className="mt-10 flex flex-col gap-5">
+                            <div className="mt-5 flex flex-col gap-5">
                               <Link href="/proposer-details">
                                 <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
                                   Rs. {item.monthlyPrice} monthly
@@ -725,7 +725,7 @@ const Products = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="mobile:mx-auto">
+                          <div className="mobile:mx-auto my-[-10px]">
                             <div className="flex gap-10">
                               <div>
                                 <div>Cover amount</div>
@@ -747,9 +747,9 @@ const Products = () => {
                               </div>
                             </div>
                             <div className="flex justify-center">
-                              <div className="w-[200px] mt-10 bg-opacity-30 h-[2px] bg-quaternary" />
+                              <div className="w-[200px] mt-5 bg-opacity-30 h-[2px] bg-quaternary" />
                             </div>
-                            <div className="mt-10 flex flex-col gap-5">
+                            <div className="mt-5 flex flex-col gap-5">
                               <Link href="/proposer-details">
                                 <button className="bg-primary w-full rounded-[6px] py-1 text-white px-[20px] font-[600]">
                                   Rs. {item.monthlyPrice} monthly
